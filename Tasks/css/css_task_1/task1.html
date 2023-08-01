@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>epan</title>
+	<link rel="stylesheet" type="text/css" href="task1.css">
+</head>
+<body id="body">
+	<div id="div">
+		<center>
+			<div>
+				<header><img src="logo.jpg" id="img1"></header>
+			</div>
+		</center>
+		<div>
+			<h1 id="h1">HTML Elements</h1><hr>
+		</div>
+		<div>
+			<div id="d1"><a href="#h1">Home</a></div>
+			<div id="d2"><a href="#a">Headers</a></div>
+			<div id="d3"><a href="#b">Table</a></div>
+			<div id="d4"><a href="#c">List</a></div>
+			<div id="d5"><a href="#textformat">Text formats</a></div>
+			<div id="d6"><a href="#block">Blockquotes</a></div>
+		</div><br><br><br>
+		<hr>
+		<div>
+			<p id="p1">Pay attention to h1 tag inside section element. Font-size for h1 is the same as font-size for h2, because we have to use only one h1 on the page, and it is commonly used inside header</p>
+		</div>
+		<div>
+			<h2 id="a">Header 2</h2>
+			<h3>Header 3</h3>
+			<h4>Header 4</h4>
+			<h5>Header 5</h5>
+			<h6>Header 6</h6>
+		</div>
+		<hr>
+		<div>
+			<p><b>HTML</b> is an acronym which stands for Hyper Text Markup Language which is used for creating web pages and web applications. Let's see what is meant by <u>Hypertext Markup Language</u>, and <a href="">Web page</a>.<br>
+			<i>Hyper Text: <small>HyperText simply means</small> <big>"Text within Text"</big>. A text has a link within it, is a hypertext. Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. HyperText is a way to link two or more web pages <del>(HTML documents)</del> with <em>each other</em>.</i><br>
+			<tt>Markup language:</tt> <mark>A markup language is a computer language that is used to apply layout and formatting conventions to a text document.</mark><mark id="mark"> Markup language makes text more interactive and dynamic.</mark> It can turn text into images, tables, links, etc.<br>
+			Web Page: A web page is a document which is commonly written in HTML and translated by a web browser. A web page can be identified by entering an URL. A Web page can be of the static or dynamic type. With the help of HTML only, we can create static web pages.<br>
+			H<sub>2</sub>O, 1<sup>st</sup>Rank
+			</p>
+		</div>
+		<hr>
+		<div>
+			<h1 id="b">Table</h1>
+			<table id="table" cellpadding="10px">
+				<thead>
+					<tr>
+						<th>Header</th>
+						<th>Header</th>
+						<th>Header</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lviv</td>
+						<td>Kyiv</td>
+						<td>Kharkiv</td>
+					</tr>
+					<tr>
+						<td>Odessa</td>
+						<td>Zhytomyr</td>
+						<td>Dnipro</td>
+					</tr>
+					<tr>
+						<td>Sunny</td>
+						<td>Chernivtsi</td>
+						<td>Lutsk</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><br>
+		<hr>
+		<div id="c">
+			<h1>Unordered List</h1>
+			<ul id="ul1">
+			<li>List item 1</li>
+			<li>List item 2
+				<ul id="ul2"><li>Some nested list item 1</li></ul>
+			</li>
+			<li>List item 3</li>
+			</ul>
+		</div>
+		<div>
+			<h1>Ordered List</h1>
+			<ol>
+				<li>List item 1</li>
+				<li>List item 2
+					<ol type="A"><li>Some nested list item 1</li></ol>
+				</li>
+				<li>List item 3</li>
+			</ol>
+		</div>
+		<div>
+			<h1>Definition List</h1>
+			<dl>
+				<dt><h4>defines terms 1</h6></dt>
+				<dd>description 1</dd>
+				<td><h4>defines terms 2</h6></td>
+				<dd>description 2</dd>
+			</dl>
+			<label>Details</label><select>
+				<option>Select</option>
+				<option>HTML</option>
+				<option>CSS</option>
+			</select>
+		</div><br>
+		<hr>
+		<div>
+			<h1 id="textformat">Text Formats</h1>
+			<h2>Article Text</h2>
+			<h3>article title</h3>
+			<h4>Article description</h4>
+			<br>
+			<h1>Preformatted Text</h1>
+			<div id="d7">
+				<pre id="pre">
+					           Text 
+					in a pre element
+					   is displayed in a fixed-width
+					font, and it preserves
+					both
+					  spaces and
+					     line breaks
+				</pre>
+			</div>
+			<h1>Code</h1>
+			<div id="d7">
+				<center><code id="code">
+					.wrapper{               <br>
+					display: flex;          <br>
+					vertical-align: middle; <br>
+					justify-content: center;<br>
+					}
+				</code></center>
+			</div>
+		</div><br>
+		<hr>
+		<div>
+			<h1 id="block">Blockquotes</h1>
+			<p>
+				Let's keep it simple. Italics are good to help set it off from body text. Be sure to style the citation.
+				<p id="p2">
+					<i>"If you go back a few hundred years, what we take for granted today would seem like magic-being able to talk to people over long distances, to transmit images, flying, accessing vast amounts of data like an oracle. These are all things that would have been considered magic a few hundred years ago."</i><br>
+					<a href="">Elon Musk</a>
+				</p> 
+			</p>
+		</div><br>
+		<hr>
+		<div id="d9">
+			<div style="float:right;">
+				<input type="text" placeholder="First Name"><br><br>
+				<input type="text" placeholder="Surname"><br><br>
+				<input type="email" placeholder="Email"><br><br>
+				<textarea></textarea><br><br>
+				<center><button>Submit</button></center>
+			</div><br>
+		</div>
+		<hr>
+		<div id="d8">
+			<center><p>© Copyright Epam Systems</p></center>
+		</div>
+	</div>
+</body>
+</html>

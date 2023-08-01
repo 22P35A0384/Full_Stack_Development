@@ -1,0 +1,115 @@
+#body{
+	background-color:gray;
+	padding:150px;
+	background-image:url('thar.jpg');
+}
+
+#img1{
+	height:125px;
+	width:200px;
+}
+
+#div{
+	width:870px;
+	background-color:white;
+	margin:5px;
+	padding:10px;
+}
+
+#d1{
+	float:left;
+	margin:15px;
+	
+}
+
+#d2{
+	float:left;
+	margin:15px;
+	
+}
+
+#d3{
+	float:left;
+	margin:15px;
+	
+}
+
+#d4{
+	float:left;
+	margin:15px;
+	
+}
+
+#d5{
+	float:left;
+	margin:15px;
+	
+}
+
+#d6{
+	float:left;
+	margin:15px;
+	
+}
+
+#mark{
+	background:red;
+}
+
+table,th,td{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+#table{
+	width:100%;
+}
+
+ul{
+	list-style-type:square;
+}
+
+#d7{
+	width:98%;
+	height:150x;
+	background-color:navajowhite;
+	padding:5px;
+}
+
+#pre{
+	font-size:12px;
+}
+
+}
+
+#p2{
+	margin:30px;
+}
+
+#d8{
+	width: 99%;
+	height:50px;
+	background-color:wheat;
+	padding:5px;
+	font-size:12px;
+}
+
+#d9{
+	height:330px;
+}
+
+textarea{
+	height:150px;
+	width:169.6px;
+}
+
+button{
+	background-color:blue;
+	color:black;
+	width:169.6px;
+	height:30px;
+	border-start-end-radius:15px;
+	border-start-start-radius:15px;
+	border-end-end-radius:15px;
+	border-end-start-radius:15px;
+}

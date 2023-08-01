@@ -1,0 +1,84 @@
+div{
+	width: 1000px;
+	padding:15px;
+}
+
+#d2{
+	border: dotted 8px black;
+	float: left;
+	width: 400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d3{
+	border: dashed 8px black;
+	float: right;
+	width:400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d5{
+	border: solid 8px black;
+	float: left;
+	width: 400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d6{
+	border: double 8px black;
+	float: right;
+	width:400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d8{
+	border: groove 8px black;
+	float: left;
+	width: 400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d9{
+	border: ridge 8px black;
+	float: right;
+	width:400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d11{
+	border: inset 8px black;
+	float: left;
+	width: 400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d12{
+	border: outset 8px black;
+	float: right;
+	width:400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d13{
+	border: none 8px black;
+	float: left;
+	width: 400px;
+	height: 80px;
+	font-size: 60px;
+}
+
+#d14{
+	border: hidden 8px black;
+	float: right;
+	width:400px;
+	height: 80px;
+	font-size: 60px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>styling in css</title>
+	<link rel="stylesheet" type="text/css" href="external_styling.css">
+	<style type="text/css">
+		.d{
+			font-size:40px;
+			font-family:cursive;
+			height:60px;
+			width:600px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div style="border: dotted 20px blue; width:1000px;">
+			<br>
+			<div id="d1">
+				<h3 style="font-size: 30px;">Inline Styling</h3>
+				<p style="color:black;background-color:greenyellow;height:60px;width:550px;font-size:40px;border:5px solid red;">This is inline styling in css</p>
+			</div>
+			<br>
+			<div id="d2">
+				<h3 style="font-size: 30px;">Internal Styling</h3>
+				<p class="d">This is Internal Styling in css</p>
+			</div>
+			<br>
+			<div id="d3">
+				<h3 style="font-size: 30px;">External Styling</h3>
+				<p class="external">This is External Styling</p>
+			</div>
+			<br>
+		</div>
+		<br>
+		<div id="d4">
+			<br>
+			<div id="d5">
+				<p>This is Done By class selector</p>
+			</div>
+			<div id="d6">
+				<p>This Is Done By Id Selector</p>
+			</div>
+			<div id="d7">
+				<p>This Is Done By Element Selector</p>
+			</div>
+			<br>
+		</div>
+		<br>
+		<div>
+			<input required type="text" placeholder="First Name" autofocus><br><br>
+	        <input required type="text" placeholder="Last Name"><br><br>
+	        <input required type="email" placeholder="Email Address"><br><br>
+	        <input required type="tel" maxlength="10" placeholder="Mobile Number"><br><br>
+	        <input required type="date" placeholder="Date Of Birth" ><br><br>
+	        <input type="tel" type="Number" placeholder="Age" maxlength="5"><br><br>
+	        <input repuired type="text" placeholder="Create New User Name"><br><br>
+	        <input required type="password" placeholder="Create New Password" name="password"><br><br>
+	    </div>
+	    <div>
+	        <button class="button">Submit</button><br><br>
+	    </div>
+	    <div id="d8">
+	        <button class="reset">Reset</button>
+	    </div><br><br>
+	    <div id="d9">
+	       	<img src="thar.jpg">
+		</div>
+	</center>
+</body>
+</html>

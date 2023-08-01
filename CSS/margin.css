@@ -1,0 +1,29 @@
+#d1{
+	width:1120px;
+	height:700px;
+	border: solid 5px;
+}
+
+#d2{
+	width:300px;
+	height:600px;
+	border: solid 5px;
+	float:left;
+	margin:30px;
+}
+
+#d3{
+	width:300px;
+	height:600px;
+	border: solid 5px;
+	float:left;
+	margin:30px;
+}
+
+#d4{
+	width:300px;
+	height:600px;
+	border: solid 5px;
+	float:right;
+	margin:30px;
+}

@@ -1,0 +1,12 @@
+div{
+	height:500px;
+	width:1400px;
+	border: 50px solid transparent;
+  	padding: 15px;
+  	border-image: url('task4.jpg') 30 stretch;
+}
+
+img{
+	height:500px;
+	width:1400px;
+}

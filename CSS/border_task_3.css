@@ -1,0 +1,29 @@
+body{
+	padding:3.7%;
+}
+
+#d1{
+	background-color: white;
+}
+
+#d2{
+	background-color:green;
+	border:dashed 10px;
+	width:1400px;
+	height:500px;
+}
+
+#d3{
+	background-color: white;
+}
+
+#d4{
+	background-color: white;
+	height:500px;
+	font-size:40px;
+}
+
+img{
+	height:500px;
+	width:1400px;
+}
