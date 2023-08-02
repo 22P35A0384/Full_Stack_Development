@@ -1,0 +1,38 @@
+#d1{
+	width:1300px;
+	height:300px;
+	margin:30px;
+}
+
+#d2{
+	width:300px;
+	height:300px;
+	float:left;
+	border: solid 10px;
+	margin:30px;
+
+}
+
+#d3{
+	width:300px;
+	height:300px;
+	float:left;
+	border: solid 10px;
+	border-radius:50%;
+	margin:30px;
+}
+
+#d4{
+	width:300px;
+	height:300px;
+	float:left;
+	border: solid 10px;
+	border-radius:10%;
+	margin:30px;
+}
+
+h4{
+	font-size:30px;
+	font-family:cursive;
+	padding:70px;
+}

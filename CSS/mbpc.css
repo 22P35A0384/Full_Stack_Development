@@ -1,0 +1,17 @@
+#d1{
+	background-color:grey;
+	margin:50px;
+	padding:30px;
+}
+#d2{
+	background-color:black;
+	color:white;
+	border:orange 40px solid;
+	padding:40px;
+	margin:15px;
+}
+
+h4{
+	background-color:skyblue;
+	padding:60px;
+}
