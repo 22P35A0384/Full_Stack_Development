@@ -1,0 +1,40 @@
+h1{
+	background-color:green;
+	display:inline;
+}
+
+span{
+	background-color:red;
+	display:block;
+}
+
+#d1{
+	width:1000px;
+	height:300px;
+}
+
+#d2{
+	width:300px;
+	height:300px;
+	border: solid 5px red;
+	float:left;
+	margin:10px;
+	display: none;
+}
+
+#d3{
+	width:300px;
+	height:300px;
+	border: solid 5px green;
+	float:left;
+	margin:10px;
+	visibility:hidden;
+}
+
+#d4{
+	width:300px;
+	height:300px;
+	border: solid 5px yellow;
+	float:left;
+	margin:10px;
+}
