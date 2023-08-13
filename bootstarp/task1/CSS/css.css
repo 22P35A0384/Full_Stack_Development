@@ -1,0 +1,77 @@
+#main{
+	background-color:rgb(240, 240, 240);
+}
+
+#d1{
+	position:relative;
+	top:20px;
+	background-color:white;
+}
+
+.topButtons{
+	width: 100%;
+	justify-content: center;
+	display: flex;
+}
+
+#row{
+	background-color:rgb(240, 240, 240);
+}
+
+button{
+	width:120px;
+}
+
+#img1{
+	height:120px;
+	width:120px;
+	border-radius:50%;
+	position:relative;
+	top:40px;
+	left:20px;
+}
+
+#h1{
+	position:relative;
+	left:220px;
+	bottom:70px;
+}
+
+#h61{
+	float:left;
+	position:relative;
+	left:20px;
+	top:10px;
+}
+
+#h62{
+	float:right;
+	position:relative;
+	right:130px;
+}
+
+#h63{
+	position:relative;
+	right:150px;
+}
+
+ul li::marker {
+  color: green;
+  font-size: 4em;
+}
+
+li{
+	padding-bottom:40px;
+	position:relative;
+	left:85px;
+}
+
+hr{
+	background-color:black;
+	width:430px;
+	height:3px;
+	transform:rotate(90deg);
+	position:relative;
+	top:143px;
+	right:137px;
+}

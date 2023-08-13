@@ -1,0 +1,43 @@
+.row{
+	background-color:red;
+}
+
+.mk{
+	height:500px;
+}
+
+.kl{
+	height: 500px;
+}
+.img{
+	height:300px;
+	width: 400px;
+	margin-top:60px;
+	margin-left:90px;
+}
+.aa1{
+	margin-left:230px;
+}
+
+.aa{
+	margin-left:170px;
+}
+.c1{
+	margin-left:100px;
+	color:white;
+}
+.c2{
+	margin-left:100px;
+	margin-top:10px;
+	color:white;
+}
+.c3{
+	margin-left:100px;
+	color:white;
+}
+.myInput1{
+	width:297px;
+}
+.myInput{
+	width:610px;
+}
