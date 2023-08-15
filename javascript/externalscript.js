@@ -55,3 +55,29 @@ for(let i = 0; i<trainee.length; i++){
 	}
 	document.write("<br>")
 }
+
+for(var i = 0; i<trainee.length; i++){
+	document.write((i+1)+". ")
+	for (let j in trainee[i]){
+		document.write(j+" : "+trainee[i][j]+"<br>")
+		document.write(" ")
+	}
+	document.write("<br>")
+}
+
+document.write("<br>")
+
+for (i=0;i<5; i++){
+	document.write("Gangadhar"+"<br>"+"<br>")
+}
+
+var object = [{
+	name : 'Gangadhar'
+	roolno : '22P35A3084'
+	clg : 'ACET'
+	mail : '22p35a0384@acet.ac.in'
+}]
+
+while(i = true; i++){
+	document.write(i)
+}
