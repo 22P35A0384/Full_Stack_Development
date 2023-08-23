@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Onkeyup</title>
+</head>
+<body>
+	<center>
+		<label>Enter Your Name</label>
+		<input type="text" onkeyup="alert(this.value)" id="input" style="border:5px solid black; border-radius:10px;">
+		<br><br>
+		<span id="span"></span>
+	</center>
+	<script type="text/javascript">
+		function alert(str) {
+			var arr = ["!","@","#","$","%","^","&","*","(",")","_","-","=","+","/","|","?","<",">"]
+			let x = str.length
+			z=""
+			for(i=0;i>(x+1);i++){
+				q = str.charAt(i)
+				if(q in arr){
+					z = true
+					document.getElementById('span').innerText = 'Your Password Was Strong'
+				}
+				else{
+					z = false
+					document.getElementById('span').innerText = 'Your Password Was Week'
+				}
+			}
+
+			if (str==''){
+				document.getElementById('span').innerText = 'Please Enter Your Password'
+				document.getElementById('span').style.color = 'red'
+				document.getElementById('input').style.borderColor = 'red';
+			}
+			else if(str.length<5){
+                 document.getElementById('span').innerText = 'Please Enter More Than 5 Characters'
+                 document.getElementById('span').style.color = 'red'  
+			}
+			else if(z==true){
+				document.getElementById('span').innerText = 'Your Password Was Strong'
+			}
+			else if(z==false){
+				document.getElementById('span').innerText = 'Your Password Was Week'
+			}
+			else{
+				document.getElementById('span').innerText = ''
+				document.getElementById('input').style.borderColor = 'black';
+			}
+		}
+
+
+	</script>
+</body>
+</html>

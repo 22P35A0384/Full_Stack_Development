@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game Task</title>
+	<style type="text/css">
+		span{
+			font-size:20px;
+			padding:5.5px;
+		}
+		button{
+			height:36px;
+			width:90px;
+			border:hidden;
+			color:white;
+			background-color:blue;
+			border-radius:18px;
+		}
+		button:hover{
+			height:36px;
+			width:90px;
+			border:hidden;
+			color:black;
+			background-color:skyblue;
+			border-radius:18px;
+		}
+		button:active{
+			height:36px;
+			width:100px;
+			border:hidden;
+			color:white;
+			background-color:green;
+			border-radius:20px;
+		}
+		#in{
+			height:40px;
+			width:50px;
+			color:black;
+			font-size:20px;
+			padding-left:45px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<br>
+		<br>
+		<br>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+		<br><br>
+		<input type="radio" name="radio" onclick="match(1)" style="cursor:pointer;">
+		<input type="radio" name="radio" onclick="match(2)" style="cursor:pointer;">
+		<input type="radio" name="radio" onclick="match(3)" style="cursor:pointer;">
+		<input type="radio" name="radio" onclick="match(4)" style="cursor:pointer;">
+		<input type="radio" name="radio" onclick="match(5)" style="cursor:pointer;">
+		<input type="radio" name="radio" onclick="match(6)" style="cursor:pointer;">
+		<br><br>
+		<button onclick="random()">Play</button><br><br>
+		<input type="Text" value="5" id="in" readonly><br><br>
+		<p id="end"></p><br><br>
+		<video autoplay loop muted id="video"></video>
+	</center>
+	<script type="text/javascript">
+		var m = 0
+		function match(val){
+			m = val
+			console.log(val)
+		}
+		console.log(m)
+		function random(){
+			var x=Math.floor(Math.random()*6)+1;
+			p = document.getElementById('in').value = x
+			if (m==x){
+				document.getElementById('end');
+				end.innerText = 'You Won The Game'
+				document.getElementById('video').innerHTML = "<source src='good.mp4' type='video/mp4'>"
+			}
+			else{
+				document.getElementById('end');
+				end.innerText = 'You Loses The Game'
+				// document.getElementById('video').innerHTML = "<source src='sad.mp4' type='video/mp4'>"
+			}
+		}
+	</script>
+</body>
+</html>

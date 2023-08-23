@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Events | Click</title>
+</head>
+<body>
+	<h1>This Is A Click Event</h1>
+	<button onclick="action()">Click Here</button>
+	<script type="text/javascript">
+		function action(){
+			alert("Testing")
+			a = document.querySelectorAll("h1")
+			a[0].style.color = 'red'
+			document.body.style.background = 'green'
+		}
+
+	</script>
+</body>
+</html>

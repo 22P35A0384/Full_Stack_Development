@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter some text in the fields below, then press the "Submit form" button to submit the form.</p>
+
+<form id="myForm" onsubmit="return validateForm()" method="post">
+  First name: <input type="text" name="fname" id="fname_id"><br>
+  Last name: <input type="text" name="lname" id="lname_id"><br><br>
+  <select name="colleges" id="clg_id">
+  	<option value="">--select colleges ---</option>
+  	<option value="AEC">AEC</option>
+  	<option value="ACET">ACET</option>
+  	<option value="ACOE">ACOE</option>
+  </select><br><br>
+  <input type="submit" value="Submit">
+
+</form>
+
+<script>
+function validateForm(){
+  let fname = document.getElementById('fname_id').value;
+  let lname = document.getElementById('lname_id').value;
+  let clg = document.getElementById('clg_id').value;
+  if(fname == ''){
+    alert("please enter first name");
+    return false;
+  }
+  if(lname == ''){
+    alert("please enter last name");
+    return false;
+  }
+  if(clg == ''){
+    alert("please choose college");
+    return false;
+  }
+	
+}
+
+</script>
+
+</body>
+</html>

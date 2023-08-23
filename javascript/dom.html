@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM | Properties</title>
+</head>
+<body>
+	<!-- in dom we have 4 types of selectors
+		1. document.getElemetById("<here we hav to give id>")
+		2. document.getElementsByClassName("<here we have to give class name")
+		3. document.getElementsByTagName("<Here We have to give the tag name>")
+		4. document.quarySelector("<here we have to give the tag name as we give in CSS>")
+	-->
+
+	<p id="p1">Gangadhar</p>
+	<p class="p2">Drive ready</p>
+	<p class="p2">Fullstack</p>
+	<p>Jami</p>
+	<h1>One</h1>
+	<h1>Two</h1>
+	<h1>Three</h1>
+	<h1>Four</h1>
+	<h1>Five</h1>
+	<h1>Six</h1>
+	<h1>Seven</h1>
+	<h1>Eight</h1>
+	<h1>Nine</h1>
+	<h1>Ten</h1>
+	<script type="text/javascript">
+		a = document.getElementById("p1");
+		p1.style.color = "red";
+		b = document.getElementsByClassName("p2");
+		b[0].style.color = "Green"
+		b[1].style.fontSize = "10px"
+		c = document.getElementsByTagName("p");
+		c[3].style.backgroundColor = "red"
+		let d = document.querySelectorAll("h1");
+		for (i=0;i<d.length;i++){
+			if (i%2==0){
+				d[i].style.color = 'green'
+				d[i].style.backgroundColor = 'red'
+			}
+			else if (i==4){
+				d[i].style.color = 'yellow'
+				d[i].style.backgroundColor = 'pink'
+			}
+			else{
+				d[i].style.color = 'red'
+				d[i].style.backgroundColor = 'green'
+			}
+		}
+	</script>
+
+</body>
+</html>

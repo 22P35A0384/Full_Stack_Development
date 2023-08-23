@@ -73,11 +73,8 @@ for (i=0;i<5; i++){
 
 var object = [{
 	name : 'Gangadhar'
-	roolno : '22P35A3084'
+	rollno : '22P35A3084'
 	clg : 'ACET'
 	mail : '22p35a0384@acet.ac.in'
 }]
 
-while(i = true; i++){
-	document.write(i)
-}

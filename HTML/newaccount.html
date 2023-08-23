@@ -9,32 +9,80 @@
 </head>
 <body >
     <center>
-        <input required type="text" placeholder="First Name" autofocus><br><br>
-        <input required type="text" placeholder="Last Name"><br><br>
-        <input required type="email" placeholder="Email Address"><br><br>
-        <input required type="tel" maxlength="10" placeholder="Mobile Number"><br><br>
-        <input required type="date" placeholder="Date Of Birth" ><br><br>
-        <input type="number" placeholder="Age"><br><br>
-        <input repuired type="text" placeholder="Create New User Name"><br><br>
-        <input required type="password" placeholder="Create New Password" name="password"><br><br>
-        <input required type="text" placeholder="Re-enter Password"><br><br>
-        <input required type="radio" name="gender"><label style="color:black;" >Male</label>
-        <input required type="radio" name="gender"><label style="color:black;" >Female</label><br><br>
-        <label>Upload Your Resume  </label><input required type="file"><br><br>
-        <input required type="image" name=""><br><br>
-        <input required type="url" placeholder="Enter Your Profile Link" value="https://technicalhub.io/" readonly disabled><br><br>
-        <input required type="range"><br><br><br>
-        <textarea required placeholder="Address"></textarea><br><br>
-        <select required>
-            <option>Select Your College</option>
-            <option>Aditya Engineering College</option>
-            <option>Aditya College Of Engineering And Technology</option>
-            <option>Aditya College Of Engineering</option>
-        </select><br><br>
-        <input type="search" placeholder="Search"><br><br>
-        <input required type="checkbox"><label style="color:black;">Click To Accept The Terms And Conditions</label><br><br>
-        <input type="submit" name="">
-        <input type="reset" name="">
+        <form autofocus id="myForm" onsubmit="return validateForm()" method="post">
+            <input name="fname" id="fname_id" type="text" placeholder="First Name"><br><br>
+            <input name="lname" id="lname_id" type="text" placeholder="Last Name"><br><br>
+            <input name="email" id="email_id" type="email" placeholder="Email Address"><br><br>
+            <input name="tel" id="tel_id" type="tel" maxlength="10" placeholder="Mobile Number"><br><br>
+            <input name="data" id="date_id" type="date" placeholder="Date Of Birth" ><br><br>
+            <input name="age" id="age_id" type="number" placeholder="Age"><br><br>
+            <input name="uname" id="uname_id" type="text" placeholder="Create New User Name"><br><br>
+            <input name="fname" id="fname_id" type="password" placeholder="Create New Password" name="password"><br><br>
+            <input name="fname" id="fname_id" type="text" placeholder="Re-enter Password"><br><br>
+            <input name="fname" id="fname_id" type="radio" name="gender"><label style="color:black;" >Male</label>
+            <input name="fname" id="fname_id" type="radio" name="gender"><label style="color:black;" >Female</label><br><br>
+            <label>Upload Your Resume  </label><input name="fname" id="fname_id" type="file"><br><br>
+            <input name="fname" id="fname_id" type="image" name=""><br><br>
+            <input name="fname" id="fname_id" type="url" placeholder="Enter Your Profile Link" value="https://technicalhub.io/" readonly disabled><br><br>
+            <input name="fname" id="fname_id" type="range"><br><br><br>
+            <textarea name="fname" id="fname_id" placeholder="Address"></textarea><br><br>
+            <select name="clg" id="clg_id">
+                <option value="">-- select your college --</option>
+                <option value="Aditya Engineering College">Aditya Engineering College</option>
+                <option value="Aditya College Of Engineering And Technology">Aditya College Of Engineering And Technology</option>
+                <option value="Aditya College Of Engineering">Aditya College Of Engineering</option>
+            </select><br><br>
+            <input name="fname" id="fname_id" type="search" placeholder="Search"><br><br>
+            <input name="fname" id="fname_id" type="checkbox"><label style="color:black;">Click To Accept The Terms And Conditions</label><br><br>
+            <input type="submit" name="">
+            <input type="reset" name="">
+        </form>
     </center>
+    <script>
+        function validateForm(){
+            let fname = document.getElementById('fname_id').value;
+            let lname = document.getElementById('lname_id').value;
+            let clg = document.getElementById('clg_id').value;
+            let email = document.getElementById('email_id').value;
+            let tel = document.getElementById('tel_id').value;
+            let date = document.getElementById('date_id').value;
+            let age = document.getElementById('age_id').value;
+            let uname = document.getElementById('uname_id').value;
+            if(fname == ''){
+                alert("please enter first name");
+                return false;
+            }
+            if(lname == ''){
+                alert("please enter last name");
+                return false;
+            }
+            if(email == ''){
+            alert("please enter your email");
+            return false;
+            }
+            if(tel == ''){
+            alert("please enter your Mobile Number");
+            return false;
+            }
+            if(date == ''){
+            alert("please select your DOB");
+            return false;
+            }
+            if(age == ''){
+            alert("please enter your age");
+            return false;
+            }
+            if(uname == ''){
+            alert("please create your user name");
+            return false;
+            }
+            if(clg == ''){
+                alert("please choose college");
+                return false;
+            }
+            
+        }
+
+    </script>
 </body>
 </html>

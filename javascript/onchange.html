@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>onchange</title>
+</head>
+<body>
+	<center>
+		<select style="height:30px; width:300px;" onchange="alert(this.value)">
+			<option>-- select college --</option>
+			<option value="AEC">AEC</option>
+			<option value="ACET">ACET</option>
+			<option value="ACOE">ACOE</option>
+		</select><br><br><br>
+		<iframe src="" id="iframe" style="height:1000px;width:100%;"></iframe>
+	</center>
+	<script type="text/javascript">
+		function alert(val){
+			if(val=='AEC'){
+				document.getElementById('iframe').src = "https://aec.edu.in/"
+			}
+			else if(val=='ACET'){
+				document.getElementById('iframe').src = "https://acet.ac.in/"
+			}
+			else{
+				document.getElementById('iframe').src = "https://www.acoe.edu.in/"
+			}
+		}
+	</script>
+</body>
+</html>

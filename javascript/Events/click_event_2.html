@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Click Event 2</title>
+</head>
+<body>
+	<center>
+		<button>Show</button><br><br>
+		<button>Hide</button><br><br>
+		<input type="password" placeholder="Enter The Password"><button style="border:hidden;background-color:white;"><i class="fa-solid fa-eye-slash" style="color: #3a2c36;" id="i"></i></button>
+		<h1 style="display:none;">Please Check Your Password</h1>
+	</center>
+	<script type="text/javascript">
+		x = document.querySelectorAll("button");
+		y = document.querySelectorAll("h1");
+		z = document.querySelectorAll("input");
+		x[0].onclick = test;
+		x[1].onclick = function(){
+			y[0].style.display = "none"
+			z[0].type = "password"
+		    x[2].innerHTML = "<i class="fa-solid fa-eye-slash" style="color:black;" id="i"></i>"
+		}
+
+		function test(){
+			y[0].style.display = "block"
+			z[0].type = "text"
+			// x[2].innerHTML = "<i class="fa-solid fa-eye" style="color:black;" id="i"></i>"
+		}
+	</script>
+</body>
+</html>

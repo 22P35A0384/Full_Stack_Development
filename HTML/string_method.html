@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>String Methods</title>
+</head>
+<body>
+	<center>
+		<table border="1" cellpadding="5" cellspacing="5">
+			<tr>
+				<td>G</td>
+				<td>a</td>
+				<td>n</td>
+				<td>g</td>
+				<td>a</td>
+				<td>d</td>
+				<td>h</td>
+				<td>a</td>
+				<td>r</td>
+				<td>&nbsp;</td>
+				<td>J</td>
+				<td>a</td>
+				<td>m</td>
+				<td>i</td>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>-14</td>
+				<td>-13</td>
+				<td>-12</td>
+				<td>-11</td>
+				<td>-10</td>
+				<td>-9</td>
+				<td>-8</td>
+				<td>-7</td>
+				<td>-6</td>
+				<td>-5</td>
+				<td>-4</td>
+				<td>-3</td>
+				<td>-2</td>
+				<td>-1</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			let str = 'Gangadhar'
+			document.write(str+"<br>")
+			let str1 = String('jami')
+			document.write(str1+"<br>")
+			let str2 = new String('sai')
+			document.write(str2+"<br>")
+
+			let string = 'Gangadhar Jami';
+			function show(str){
+				document.write("<b>"+str+"</b><br>")
+			}
+
+			show(string)
+			show(string.length)
+
+			show(string.charAt(6))
+			show(string.indexOf('a'))
+			show(string.lastIndexOf('a'))
+
+			for (i=0;i<string.length;i++){
+				x = string.charAt(i)
+				if (x==" "){
+					document.write("")
+				}
+				else{
+					show(string.charAt(i))
+				}
+			}
+			name1 = 'Venkata'
+			name2 = ' Sai'
+			name3 = ' Gangadhar'
+			name4 = ' Jami'
+			show(name1.concat(name2,name3,name4))
+
+			test = "   fullstack"
+			test1 = test.trim()
+			show(test1.length)
+			show(test.length)
+
+			name = "Gangadhar Jami"
+			show(name.toLowerCase())
+			show(name.toUpperCase())
+
+			str3 = 'Venkata Sai Gangadhar Jami'
+			show(str3.includes('Venkata'))
+			show(str3.includes('venkata'))
+
+			str4 = 'Gangadhar'
+			console.log(str4.split(""))
+			str5 = 'Venkata&Sai&Gangadhar&Jami'
+			console.log(str5.split("&"))
+			str6 = 'Venkata Sai Gangadhar Jami'
+			console.log(str6.split(" "))
+
+			show(str4.startsWith('G'))
+			show(str4.startsWith('g'))
+			show(str4.endsWith('R'))
+			show(str4.endsWith('r'))
+
+			show(str4.slice(5))
+			show(str4.slice(0))
+			show(str4.slice(-5))
+
+			show(str4.substring(5))
+
+			show(str4.substr(2,5))
+		</script>
+	</center>
+</body>
+</html>

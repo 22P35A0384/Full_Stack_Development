@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = "*";
+		for (i=0;i<10;i++){
+			document.write(a+'<br>')
+			a+= "*"
+		}
+		var b = "*"
+		var x = 9
+		for (i=0;i<9;i++){
+			for (j=0;j<x;j++){
+				document.write(b)
+			}
+			x+= -1
+			document.write("<br>")
+		}
+
+		document.write("<br>")
+
+		var d = 5
+		var z = 0
+		var t = 4
+		for (i=0;i<d;i++){
+			for (j=0;j<d;j++){
+				if(j==z){
+					document.write("*")
+				}
+				else if (j==t){
+					document.write("*")
+				}
+				else{
+					document.write("&nbsp;"+"&nbsp;")
+				}
+			}
+			t+= -1
+			z+= 1
+			document.write("<br>")	
+		}
+
+		var v = 5;
+		function fun(){
+			var v = 10;
+		}
+		fun()
+		document.write(v)
+	</script>
+</body>
+</html>

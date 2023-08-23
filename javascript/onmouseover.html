@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mouseover</title>
+</head>
+<body>
+	<center>
+		<div id="d1" style="float:left;">
+			<img id="img1" src="b2.jpg" style="height:600px;width:600px;position:relative; top: 50px; left:100px;" onmouseenter="change1()" onmouseleave="change11()">
+		</div>
+		<div id="d2" style="float:left;">
+			<img id="img2" src="c2.jpg" style="height:600px;width:500px;position:relative; top:55px; left:250px;" onmouseenter="change2()" onmouseleave="change22()">
+		</div>
+	</center>
+	<script type="text/javascript">
+		function change1() {
+			document.getElementById('d1').innerHTML = "<img src='b1.jpg' style='height:600px;width:600px;position:relative; top: 50px; left:100px;'>"
+		}
+
+		function change2() {
+			document.getElementById('d2').innerHTML = "<img src='c1.jpg' style='height:600px;width:500px;position:relative; top:55px; left:250px;'>"
+		}
+
+
+		function change11() {
+			document.getElementById('d1').innerHTML = "<img src='b2.jpg' style='height:600px;width:600px;position:relative; top: 50px; left:100px;'>"
+		}
+
+		function change22() {
+			document.getElementById('d2').innerHTML = "<img src='c2.jpg' style='height:600px;width:500px;position:relative; top:55px; left:250px;'>"
+		}
+	</script>
+</body>
+</html>
