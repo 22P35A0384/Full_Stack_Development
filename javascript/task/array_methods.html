@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Array Methods</title>
+</head>
+<body>
+	<center>
+		<h1>JavaScript Array Methods Examples</h1>
+	  	<div id="output"></div>
+
+	  	<script>
+		    const outputDiv = document.getElementById('output');
+		    let array = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+
+		    function displayExample(methodName, example) {
+		      const exampleOutput = document.createElement('p');
+		      exampleOutput.innerHTML = `<strong>${methodName}:</strong> ${example}`;
+		      p.append(exampleOutput);
+		    }
+
+		    document.write("Original Array - ", array.toString()+"<br>");
+
+		    // .slice() - Create a new array from a portion of the original array
+		    const slicedArray = array.slice(2, 6);
+		    document.write(".slice() - ", slicedArray.toString()+"<br>");
+
+		    // .map() - Transform each element of the array
+		    const mappedArray = array.map(num => num * 2);
+		    document.write(".map() - ", mappedArray.toString()+"<br>");
+
+		    // .filter() - Filter elements based on a condition
+		    const filteredArray = array.filter(num => num > 3);
+		    document.write(".filter() - ", filteredArray.toString()+"<br>");
+
+		    // .sort() - Sort the array
+		    array.sort();
+		    document.write(".sort() - ", array.toString()+"<br>");
+
+		    // .forEach() - Execute a function for each element
+		    array.forEach((num, index) => array[index] = num * 3);
+		    document.write(".forEach() - ", array.toString()+"<br>");
+
+		    // .concat() - Concatenate arrays
+		    const concatenatedArray = array.concat([7, 8, 9]);
+		    document.write(".concat() - ", concatenatedArray.toString()+"<br>");
+
+		    // .every() - Check if all elements meet a condition
+		    const everyResult = array.every(num => num % 2 === 0);
+		    document.write(".every() - ", everyResult+"<br>");
+
+		    // .some() - Check if any element meets a condition
+		    const someResult = array.some(num => num > 10);
+		    document.write(".some() - ", someResult+"<br>");
+
+		    // .includes() - Check if an element exists in the array
+		    const includesResult = array.includes(5);
+		    document.write(".includes() - ", includesResult+"<br>");
+
+		    // .join() - Convert array elements to a string
+		    const joinedArray = array.join(' - ');
+		    document.write(".join() - ", joinedArray+"<br>");
+
+		    // .reduce() - Reduce the array to a single value
+		    const reducedValue = array.reduce((accumulator, num) => accumulator + num, 0);
+		    document.write(".reduce() - ", reducedValue+"<br>");
+
+		    // .find() - Find the first element that meets a condition
+		    const foundElement = array.find(num => num > 15);
+		    document.write(".find() - ", foundElement+"<br>");
+
+		    // .findIndex() - Find the index of the first element that meets a condition
+		    const foundIndex = array.findIndex(num => num > 10);
+		    document.write(".findIndex() - ", foundIndex+"<br>");
+
+		    // .indexOf() - Find the index of a specific element
+		    const indexOfValue = array.indexOf(9);
+		    document.write(".indexOf() - ", indexOfValue+"<br>");
+
+		    // .fill() - Fill array elements with a value
+		    array.fill(0, 2, 5);
+		    document.write(".fill() - ", array.toString()+"<br>");
+
+		    // .reverse() - Reverse the order of elements
+		    array.reverse();
+		    document.write(".reverse() - ", array.toString()+"<br>");
+
+		    // .push() - Add elements to the end of the array
+		    array.push(10, 11);
+		    document.write(".push() - ", array.toString()+"<br>");
+
+		    // .pop() - Remove the last element from the array
+		    const poppedElement = array.pop();
+		    document.write(".pop() - ", `${array.toString()} (popped: ${poppedElement})`+"<br>");
+
+		    // .shift() - Remove the first element from the array
+		    const shiftedElement = array.shift();
+		    document.write(".shift() - ", `${array.toString()} (shifted: ${shiftedElement})`+"<br>");
+
+		    // .unshift() - Add elements to the beginning of the array
+		    array.unshift(-1, 0);
+		    document.write(".unshift() - ", array.toString()+"<br>");
+	  	</script>
+  	</center>
+</body>
+</html>

@@ -10,8 +10,11 @@
 		<input id="in" type="text" placeholder="Enter Value">
 		<button onclick="show()">Enter</button>
 		<script type="text/javascript">
-			function show(){
-				let x = document.getElementById('in')
+			function show() {
+				setTimeout((function show1(){
+					let x = document.getElementById('in').value
+					document.write(x)
+				}),5000)
 			}
 		</script>
 	</center>

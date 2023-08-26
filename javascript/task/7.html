@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Palindrome</title>
+</head>
+<body>
+	<center>
+		<input type="text" placeholder="Enter The Value" id="in">
+		<button onclick="show()">Enter</button>
+		<script type="text/javascript">
+			function show(){
+				function isPalindrome(number) {
+					const originalNumber = number;
+					let reversedNumber = 0;
+					while (number > 0) {
+						const lastDigit = number % 10;
+						reversedNumber = reversedNumber * 10 + lastDigit;
+						number = Math.floor(number / 10);
+					}
+					return originalNumber == reversedNumber;
+				}
+				let numToCheck = document.getElementById('in').value;
+				if (isPalindrome(numToCheck)) {
+					document.write(`${numToCheck} is a palindrome.`);
+				}
+				else {
+					document.write(`${numToCheck} is not a palindrome.`);
+				}
+			}
+
+		</script>
+	</center>
+</body>
+</html>

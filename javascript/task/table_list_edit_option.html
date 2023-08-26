@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Task</title>
+</head>
+<body>
+	<div class="container">
+		<span style="font-size:30px;"><b>Product Details</b></span>
+		<button onclick="new_tr()" class="btn btn-primary" style="position: relative;left:75%;">+ Add New</button>
+		<table class="table table-bordered mt-3" border="2" cellpadding="3" cellspacing="5">
+			<thead>
+				<tr>
+					<th scope="col">Product Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Price</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				<tr id="1" value="1">
+					<td scope="row">456789</td>
+					<td>Realme Mobile</td>
+					<td>16000</td>
+					<td>
+						<i onclick="change_to_check('1')"class="fa-solid fa-pen"></i>
+						<i onclick="delete_data('1')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i>
+					</td>
+				</tr>
+				<tr id="2" value="2">
+					<td scope="row">123456</td>
+					<td>MI Mobile</td>
+					<td>18000</td>
+					<td>
+						<i onclick="change_to_check('2')" class="fa-solid fa-pen"></i>
+						<i onclick="delete_data('2')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i>
+					</td>
+				</tr>
+				<tr id="3" value="3">
+					<td scope="row">365648</td>
+					<td>Vivo Mobile</td>
+					<td>20000</td>
+					<td>
+						<i onclick="change_to_check('3')" class="fa-solid fa-pen"></i>
+						<i onclick="delete_data('3')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		let m = 3;
+		function change_to_check(n){
+			let tr1 = document.getElementById(n).innerHTML = '<td scope="row"><input type="text" id="in1"></td><td><input type="text" id="in2"></td><td><input type="text" id="in3"></td><td><i onclick="save_changes('+n+')" class="fa-solid fa-check"></i><i onclick="delete_data('+n+')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i></td>'
+		}
+
+		function save_changes(n){
+			let in1 = document.getElementById("in1").value;
+			let in2 = document.getElementById("in2").value;
+			let in3 = document.getElementById("in3").value;
+			let tr2 = document.getElementById(n).innerHTML = '<td scope="row">'+in1+'</td><td>'+in2+'</td><td>'+in3+'</td><td><i onclick="change_to_check('+n+')"class="fa-solid fa-pen"></i><i onclick="delete_data('+n+')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i></td>'
+		}
+
+		function new_tr(){
+			m = m+1;
+			let z = document.getElementById('tbody');
+			let ntr = document.createElement("tr");
+			// let nd1 = document.createElement("td");
+			// let ntd2 = document.createElement("td");
+			// let ntd3 = document.createElement("td");
+			// let ntd4 = document.createElement("td");
+			ntr.id = m
+			ntr.innerHTML =  '<td scope="row"><input type="text" id="in1"></td><td><input type="text" id="in2"></td><td><input type="text" id="in3"></td><td><i onclick="save_changes('+m+')" class="fa-solid fa-check"></i><i onclick="delete_data('+m+')" style="position:relative;left:25px;" class="fa-solid fa-trash"></i></td>'
+			tbody.append(ntr)
+		}
+
+		function delete_data(n){
+			let cnf = confirm("Are You Sure To Delete??")
+			if (cnf==true){
+				let d = document.getElementById(n).innerHTML = " "
+			}
+		}
+	</script>
+</body>
+</html>

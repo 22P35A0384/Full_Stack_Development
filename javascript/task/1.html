@@ -7,43 +7,49 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var a = 10
-		var b = typeof(a)
-		var c = "Gangadhar"
-		var d = typeof(c)
-		var e
-		var f = true
-		var g = typeof(f)
-		var h = null
-		var i = typeof(h)
-		var primitive_data_types = [{
-			Number : "value = "+a+" type of a is "+b,
-			String : "name = "+c+" type of name is "+d,
-			Undefined : "let varibale = '' "+" type of varible is "+e,
-			Boolean : "let value = "+f+" type of value is "+g,
-			Null : "value = "+h+" type of value is "+i,
-			BigInt : "This data type can represent numbers greater than 2^53-1 which helps to perform operations on large numbers. The number is specified by writing ‘n’ at the end of the value",
-			symbol : "This data type is used to create objects which will always be unique. these objects can be created using Symbol constructor.",
-		}]
+		// Number
+		const age = 25;
 
-		var non_primitive_data_types = [{
-			object : "An object in Javascript is an entity having properties and methods. Everything is an object in javascript.",
-			array : " With the help of an array, we can store more than one element under a single name.",
-		}]
+		// String
+		const name = "Gangadhar Jami";
 
-		for (i=0;i<primitive_data_types.length;i++){
-			document.write("Primitive Data Types are :")
-			for (j in primitive_data_types[i]){
-				document.write("<br>"+"&nbsp"+"<b>"+j+"</b>"+" : "+primitive_data_types[i][j])
-			}
+		// Boolean
+		const isStudent = true;
+
+		// Null
+		const emptyValue = null;
+
+		// Undefined
+		let undefinedValue;
+
+		// Object
+		let person = {
+		  firstName: "Gangadhar",
+		  lastName: "Jami",
+		  age: 30,
+		  isStudent: false,
+		};
+
+		// Array
+		const numbers = [1, 2, 3, 4, 5];
+
+		// Function
+		function greet(name) {
+		  return "Hello, " + name + "!";
 		}
-		document.write("<br><br>")
-		for (i=0;i<non_primitive_data_types.length;i++){
-			document.write("Non Primitive Data Types are :")
-			for (j in non_primitive_data_types[i]){
-				document.write("<br>"+"&nbsp"+"<b>"+j+"</b>"+" : "+non_primitive_data_types[i][j])
-			}
-		}
+
+		// Symbol
+		const uniqueKey = Symbol("key");
+
+		document.write("Number:"+ age+"<br>");
+		document.write("String:"+ name+"<br>");
+		document.write("Boolean:"+ isStudent+"<br>");
+		document.write("Null:"+ emptyValue+"<br>");
+		document.write("Undefined:"+ undefinedValue+"<br>");
+		document.write("Object:"+person.firstName+" "+person.lastName+" "+person.age+" "+person.isStudent+"<br>")
+		document.write("Array:"+ numbers+"<br>");
+		document.write("Function:"+ greet("Gangadhar")+"<br>");
+		// document.write("Symbol:"+ uniqueKey+"<br>");
 	</script>
 </body>
 </html>

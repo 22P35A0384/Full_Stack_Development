@@ -7,19 +7,30 @@
 </head>
 <body>
 	<center>
-		<input id="in" type="text" placeholder="Enter Value">
-		<button onclick="show()">Enter</button>
+		<script type="text/javascript">
+				function show(){
+					function checkUndefinedOrNull(variable) {
+						if (variable === undefined) {
+			    			return "The variable is undefined.";
+			  			}
+			  			else if (variable === null) {
+			    			return "The variable is null.";
+			  			}
+			  			else {
+			    			return typeof(variable);
+			  			}
+					}
+
+					const variable1 = undefined;
+					const variable2 = null;
+					const variable3 = "Hello";
+
+					document.write("Variable 1:", checkUndefinedOrNull(variable1)+"<br>");
+					document.write("Variable 2:", checkUndefinedOrNull(variable2)+"<br>");
+					document.write("Variable 3: The variable is ", checkUndefinedOrNull(variable3)+"<br>");
+				}
+				show()
+		</script>
 	</center>
-	<script type="text/javascript">
-		function show(){
-			let x = document.getElementById('in').value;
-			if (x=== "undefined") {
-				document.write("It Was undefined")
-			}
-			else if (x===null) {
-				document.write("It Was Null")
-			}
-		}
-	</script>
 </body>
 </html>

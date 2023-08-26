@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>String Methods</title>
+</head>
+<body>
+	<center>
+		<h1>JavaScript String Methods Examples</h1>
+	  	<div id="output"></div>
+
+	  	<script>
+		    const outputDiv = document.getElementById('output');
+		    const originalString = "Hello, world!";
+
+		    function displayExample(methodName, example) {
+		      const exampleOutput = document.createElement('p');
+		      exampleOutput.innerHTML = `<strong>${methodName}:</strong> ${example}`;
+		      p.document.write(exampleOutput);
+		    }
+
+		    document.write("Original String - ", originalString+"<br>");
+
+		    // .substr() - Extract a substring with a specified length
+		    const substrString = originalString.substr(7, 5);
+		    document.write(".substr() - ", substrString+"<br>");
+
+		    // .substring() - Extract a substring between two indices
+		    const substring = originalString.substring(7, 12);
+		    document.write(".substring() - ", substring+"<br>");
+
+		    // .replace() - Replace a substring with another substring
+		    const replacedString = originalString.replace("world", "universe");
+		    document.write(".replace() - ", replacedString+"<br>");
+
+		    // .search() - Search for a substring and return the index
+		    const searchIndex = originalString.search("world");
+		    document.write(".search() - ", searchIndex+"<br>");
+
+		    // .toLocaleLowerCase() - Convert the string to lowercase based on locale
+		    const localeLowerCase = originalString.toLocaleLowerCase();
+		    document.write(".toLocaleLowerCase() - ", localeLowerCase+"<br>");
+
+		    // .toLocaleUpperCase() - Convert the string to uppercase based on locale
+		    const localeUpperCase = originalString.toLocaleUpperCase();
+		    document.write(".toLocaleUpperCase() - ", localeUpperCase+"<br>");
+
+		    // .indexOf() - Find the index of a substring
+		    const indexOfSubstring = originalString.indexOf("world");
+		    document.write(".indexOf() - ", indexOfSubstring+"<br>");
+
+		    // .includes() - Check if the string contains a specific substring
+		    const includesHello = originalString.includes("Hello");
+		    document.write(".includes() - ", includesHello+"<br>");
+
+		    // .slice() - Extract a portion of the string
+		    const slicedString = originalString.slice(7, 12);
+		    document.write(".slice() - ", slicedString+"<br>");
+
+		    // .concat() - Concatenate strings
+		    const concatenatedString = originalString.concat(" Have a nice day!");
+		    document.write(".concat() - ", concatenatedString+"<br>");
+
+		    // .lastIndexOf() - Find the last index of a substring
+		    const lastIndexOfSubstring = originalString.lastIndexOf("o");
+		    document.write(".lastIndexOf() - ", lastIndexOfSubstring+"<br>");
+
+		    // .charCodeAt() - Get the Unicode value of a character
+		    const charCode = originalString.charCodeAt(0);
+		    document.write(".charCodeAt() - ", charCode+"<br>");
+
+		    // .trim() - Remove leading and trailing whitespace
+		    const stringWithWhitespace = "   Hello, whitespace!   ";
+		    const trimmedString = stringWithWhitespace.trim();
+		    document.write(".trim() - ", trimmedString+"<br>");
+
+		    // .charAt() - Get the character at a specific index
+		    const charAtZero = originalString.charAt(0);
+		    document.write(".charAt() - ", charAtZero+"<br>");
+
+		    // .valueOf() - Return the primitive value of a string object
+		    const valueOf = originalString.valueOf();
+		    document.write(".valueOf() - ", valueOf+"<br>");
+
+		    // .split() - Split the string into an array of substrings
+		    const splitArray = originalString.split(" ");
+		    document.write(".split() - ", JSON.stringify(splitArray)+"<br>");
+
+		    // .toString() - Convert the string object to a string
+		    const toString = originalString.toString();
+		    document.write(".toString() - ", toString+"<br>");
+
+		    // .match() - Match a regular expression against the string
+		    const matchResult = originalString.match(/lo/g);
+		    document.write(".match() - ", JSON.stringify(matchResult)+"<br>");
+	  	</script>
+	</center>
+</body>
+</html>
