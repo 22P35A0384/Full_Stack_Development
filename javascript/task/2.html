@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Key/Value </title>
+</head>
+<body>
+	<center>
+		<input id="i1" type="text" placeholder="Enter Your Name">
+		<input id="i2" type="text" placeholder="Enter Your Roll Number">
+		<input id="i3" type="text" placeholder="Enter Your College Name">
+		<input id="i4" type="text" placeholder="Enter Your Branch">
+		<button onclick="show()">Enter</button>
+	</center>
+
+	<script type="text/javascript">
+		function show() {
+			let name = document.getElementById('i1').value;
+			let rollno = document.getElementById('i2').value;
+			let clg = document.getElementById('i3').value;
+			let branch = document.getElementById('i4').value;
+			var trainee = [{
+				'name' : name,
+				'Roll_No' : rollno,
+				'College' : clg,
+				'Branch' : branch
+			}]
+			for(i=0;i<trainee.length;i++){
+				for(j in trainee[i]){
+					document.write(j+" : "+trainee[i][j]+"<br>")
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

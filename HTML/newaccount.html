@@ -17,10 +17,10 @@
             <input name="data" id="date_id" type="date" placeholder="Date Of Birth" ><br><br>
             <input name="age" id="age_id" type="number" placeholder="Age"><br><br>
             <input name="uname" id="uname_id" type="text" placeholder="Create New User Name"><br><br>
-            <input name="fname" id="fname_id" type="password" placeholder="Create New Password" name="password"><br><br>
-            <input name="fname" id="fname_id" type="text" placeholder="Re-enter Password"><br><br>
-            <input name="fname" id="fname_id" type="radio" name="gender"><label style="color:black;" >Male</label>
-            <input name="fname" id="fname_id" type="radio" name="gender"><label style="color:black;" >Female</label><br><br>
+            <input name="pass" id="pass_id" type="password" placeholder="Create New Password"><br><br>
+            <input name="rpass" id="rpass_id" type="password" placeholder="Re-enter Password"><br><br>
+            <input name="radio1" id="radio1_id" type="radio" name="gender"><label style="color:black;" >Male</label>
+            <input name="radio2" id="radio2_id" type="radio" name="gender"><label style="color:black;" >Female</label><br><br>
             <label>Upload Your Resume  </label><input name="fname" id="fname_id" type="file"><br><br>
             <input name="fname" id="fname_id" type="image" name=""><br><br>
             <input name="fname" id="fname_id" type="url" placeholder="Enter Your Profile Link" value="https://technicalhub.io/" readonly disabled><br><br>
@@ -48,6 +48,11 @@
             let date = document.getElementById('date_id').value;
             let age = document.getElementById('age_id').value;
             let uname = document.getElementById('uname_id').value;
+            let pass = document.getElementById('pass_id').value;
+            let rpass = document.getElementById('rpass_id').value;
+            let radio1 = document.getElementById('radio1_id').value;
+            let radio2 = document.getElementById('radio2_id').value;
+
             if(fname == ''){
                 alert("please enter first name");
                 return false;
@@ -74,6 +79,22 @@
             }
             if(uname == ''){
             alert("please create your user name");
+            return false;
+            }
+            if(pass == ''){
+            alert("please create your password");
+            return false;
+            }
+            if(rpass == ''){
+            alert("please re-enter your password");
+            return false;
+            }
+            if(radio1 == ''){
+            alert("please select your gender");
+            return false;
+            }
+            if(radio2 == ''){
+            alert("please select your gender");
             return false;
             }
             if(clg == ''){

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<center>
+		<table border="1" cellpadding="5" cellspacing="5">
+			<thead>
+				<tr>
+					<th>Sl.No</th>
+					<th>Name</th>
+					<th>Roll No</th>
+					<th>College</th>
+					<th>Branch</th>
+				</tr>
+			</thead>
+			<tbody id="table"></tbody>
+		</table><br>
+		<div id="div"></div><br><br>
+		<ul id="ul" style="margin-left:550px;padding-right:800px;"></ul>
+		<script type="text/javascript">
+			// let trainees = ['gangadhar','satya','durgasai','teja','nagasai','dp']
+			// let arr = trainees.map(function(ele,index,old_arr){
+			// 	return "<br>"+"Dear "+ele
+			// })
+			// console.log(arr)
+			// document.write(arr)
+			var trainee = [{
+				'name' : 'Gangadhar',
+				'Roll_No' : '22P35A3084',
+				'College' : 'ACET',
+				'Branch' : 'Mech'
+			},
+			{
+				'name' : 'eswari',
+				'Roll_No' : '21P31A0225',
+				'College' : 'ACET',
+				'Branch' : 'EEE'
+			},
+			{
+				'name' : 'Gangadhar',
+				'Roll_No' : '22P35A3084',
+				'College' : 'ACET',
+				'Branch' : 'Mech'
+			},
+			{
+				'name' : 'eswari',
+				'Roll_No' : '21P31A0225',
+				'College' : 'ACET',
+				'Branch' : 'EEE'
+			},
+			{
+				'name' : 'Gangadhar',
+				'Roll_No' : '22P35A3084',
+				'College' : 'ACET',
+				'Branch' : 'Mech'
+			},
+			{
+				'name' : 'eswari',
+				'Roll_No' : '21P31A0225',
+				'College' : 'ACET',
+				'Branch' : 'EEE'
+			},
+			{
+				'name' : 'Gangadhar',
+				'Roll_No' : '22P35A3084',
+				'College' : 'ACET',
+				'Branch' : 'Mech'
+			},
+			{
+				'name' : 'eswari',
+				'Roll_No' : '21P31A0225',
+				'College' : 'ACET',
+				'Branch' : 'EEE'
+			},
+			{
+				'name' : 'Gangadhar',
+				'Roll_No' : '22P35A3084',
+				'College' : 'ACET',
+				'Branch' : 'Mech'
+			},
+			{
+				'name' : 'eswari',
+				'Roll_No' : '21P31A0225',
+				'College' : 'ACET',
+				'Branch' : 'EEE'
+			}]
+
+			let tr = " ";
+			let arr = trainee.map(function(each_element,i,oldarr){
+				tr += "<tr><td>"+(i+1)+"</td><td>"+each_element.name+"</td><td>"+each_element.Roll_No+"</td><td>"+each_element.College+"</td><td>"+each_element.Branch+"</td></tr>"
+			})
+			document.getElementById('table').innerHTML = tr;
+			let div = " ";
+			let arr1 = trainee.map(function(each_element,i,oldarr){
+				div += "<div><span>"+(i+1)+"&nbsp;&nbsp;&nbsp;"+"</span><span>"+each_element.name+"&nbsp;&nbsp;&nbsp;"+"</span><span>"+each_element.Roll_No+"&nbsp;&nbsp;&nbsp;"+"</span><span>"+each_element.College+"&nbsp;&nbsp;&nbsp;"+"</span><span>"+each_element.Branch+"</span></div>"
+			})
+			document.getElementById('div').innerHTML = div;
+
+			let ul = " ";
+			let arr2 = trainee.map(function(each_element,i,oldarr){
+				ul += "<li></span><span>"+each_element.name+"<br>"+"</span><span>"+each_element.Roll_No+"<br>"+"</span><span>"+each_element.College+"<br>"+"</span><span>"+each_element.Branch+"</span></li><br>"
+			})
+			document.getElementById('ul').innerHTML = ul;
+		</script>
+	</center>
+</body>
+</html>

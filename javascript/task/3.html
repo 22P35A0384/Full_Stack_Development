@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>undefined or null</title>
+</head>
+<body>
+	<center>
+		<input id="in" type="text" placeholder="Enter Value">
+		<button onclick="show()">Enter</button>
+	</center>
+	<script type="text/javascript">
+		function show(){
+			let x = document.getElementById('in').value;
+			if (x=== "undefined") {
+				document.write("It Was undefined")
+			}
+			else if (x===null) {
+				document.write("It Was Null")
+			}
+		}
+	</script>
+</body>
+</html>

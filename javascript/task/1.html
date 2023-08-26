@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>data types</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 10
+		var b = typeof(a)
+		var c = "Gangadhar"
+		var d = typeof(c)
+		var e
+		var f = true
+		var g = typeof(f)
+		var h = null
+		var i = typeof(h)
+		var primitive_data_types = [{
+			Number : "value = "+a+" type of a is "+b,
+			String : "name = "+c+" type of name is "+d,
+			Undefined : "let varibale = '' "+" type of varible is "+e,
+			Boolean : "let value = "+f+" type of value is "+g,
+			Null : "value = "+h+" type of value is "+i,
+			BigInt : "This data type can represent numbers greater than 2^53-1 which helps to perform operations on large numbers. The number is specified by writing ‘n’ at the end of the value",
+			symbol : "This data type is used to create objects which will always be unique. these objects can be created using Symbol constructor.",
+		}]
+
+		var non_primitive_data_types = [{
+			object : "An object in Javascript is an entity having properties and methods. Everything is an object in javascript.",
+			array : " With the help of an array, we can store more than one element under a single name.",
+		}]
+
+		for (i=0;i<primitive_data_types.length;i++){
+			document.write("Primitive Data Types are :")
+			for (j in primitive_data_types[i]){
+				document.write("<br>"+"&nbsp"+"<b>"+j+"</b>"+" : "+primitive_data_types[i][j])
+			}
+		}
+		document.write("<br><br>")
+		for (i=0;i<non_primitive_data_types.length;i++){
+			document.write("Non Primitive Data Types are :")
+			for (j in non_primitive_data_types[i]){
+				document.write("<br>"+"&nbsp"+"<b>"+j+"</b>"+" : "+non_primitive_data_types[i][j])
+			}
+		}
+	</script>
+</body>
+</html>

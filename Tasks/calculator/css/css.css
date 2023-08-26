@@ -1,0 +1,29 @@
+input{
+	width:100%;
+	height:100%;
+	font-size:55px;
+	border:solid 3.5px;
+	border-radius:15px;
+}
+
+#d1{
+	border:solid 5px;
+	position:relative;
+	top:20px;
+}
+
+#d2{
+	width:100%;
+	height:90px;
+}
+
+#btns{
+	height:60px;
+	size:40px;
+	position:relative;
+	left:11px;
+}
+
+#p{
+	font-size:30px;
+}
