@@ -1,0 +1,8 @@
+code .
+npm install -g creat-react-app
+npx create-react-app appname
+cd appname
+npm cache clean --force
+
+
+npm start

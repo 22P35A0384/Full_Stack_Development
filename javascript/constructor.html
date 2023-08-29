@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>	Constructor</title>
+</head>
+<body>
+	<center>
+		<input type="text" id="in1" placeholder="Enter Your Roll Number"><br><br>
+		<input type="text" id="in2" placeholder="Enter Your First Name"><br><br>
+		<input type="text" id="in3" placeholder="Enter Your Last Name"><br><br>
+		<input type="text" id="in4" placeholder="Enter Your College"><br><br>
+		<input type="tel" id="in5" placeholder="Enter Your Mobile Number" ><br><br>
+		<button onclick="show()">Submit</button>
+		<script type="text/javascript">
+			function show(){
+				let rno = document.getElementById('in1').value;
+				let fname = document.getElementById('in2').value;
+				let lname = document.getElementById('in3').value;
+				let clg = document.getElementById('in4').value;
+				let mob = document.getElementById('in5').value;
+				class student{
+					constructor(rno1,fname1,lname1,clg1,mob1){
+						this.roll = rno1;
+						this.first = fname1;
+						this.last = lname1;
+						this.college = clg1;
+						this.mobile = mob1;
+					}
+				}
+				
+				let obj = new student(rno,fname,lname,clg,mob)
+				document.write("Roll Number Is : "+obj.roll+"<br>"+"First Name Is : "+obj.first+"<br>"+"Last Name Is : "+obj.last+"<br>"+"College Is : "+obj.college+"<br>"+"Mobile Number Is : "+obj.mobile+"<br>")
+				// document.write(rno,fname,lname,clg,mob)
+			}
+			// class student{
+			// 	constructor(rno)
+			// }
+		</script>
+	</center>
+</body>
+</html>

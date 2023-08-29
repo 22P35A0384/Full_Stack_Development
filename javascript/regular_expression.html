@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Regular Expressions</title>
+</head>
+<body>
+	<center>
+		<input type="tel" placeholder="Enter Your Mail" id="in"><br><br>
+		<button onclick="check()">Submit</button><br><br>
+		<span id="show"></span>
+		<script type="text/javascript">
+			// let name = /gangadhar/i;
+			// let fn = "Venkata Sai Gangadhar Jami";
+			// let output = name.test(fn);
+			// if(output == true){
+			// 	document.write("It's Correct")
+			// }else{
+			// 	document.write("It Was Incorrect")
+			// }
+
+			// let re = /^b/
+			// let output = re.test("btech");
+			// document.write(output);
+
+			// let re = /jami/g;
+			// let output = re.exec("jami venkata jami sai jami gangadhar jami")
+			// console.log(output);
+			// console.log(output.index);
+			// output = re.exec("jami venkata jami sai jami gangadhar jami")
+			// console.log(output.index);
+			// output = re.exec("jami venkata jami sai jami gangadhar jami")
+			// console.log(output.index);
+			// output = re.exec("jami venkata jami sai jami gangadhar jami")
+			// console.log(output.index);
+
+			// let re = /^[0-9]{10}/;
+			// re = /^[0-9]{9}$/;
+			// re = /^[9][0-9]{9}$/;
+			// re = /^[1-9][0-9]{9}$/;
+			// let output = re.test(8341565737);
+			// console.log(output)
+
+			// function check() {
+			// 	let x = document.getElementById('in').value;
+			// 	let re = /^[8,9,6,7][0-9]{9}$/;
+			// 	let output = re.test(x);
+			// 	if(output==true){
+			// 		document.getElementById('show').innerText = "It's Correct";
+			// 		document.getElementById('show').style.color = "green";
+			// 	}else{
+			// 		document.getElementById('show').innerText = "Enter The Number In Correct Format";
+			// 		document.getElementById('show').style.color = "red";
+			// 	}
+			// }
+
+			function check() {
+				let x = document.getElementById('in').value;
+				let re = /^[a-z]+$/;
+				re = /^[A-Z]+$/;
+				re = /^[a-zA-Z]+$/;
+				re = /^[a-zA-z0-9]+$/
+				re = /^\w+@[A-Za-z_]+?\.[a-zA-Z]{2,3}$/;
+				let output = re.test(x);
+				if(output==true){
+					document.getElementById('show').innerText = "It's Correct";
+					document.getElementById('show').style.color = "green";
+				}else{
+					document.getElementById('show').innerText = "Enter The Number In Correct Format";
+					document.getElementById('show').style.color = "red";
+				}
+			}
+		</script>
+	</center>
+</body>
+</html>
