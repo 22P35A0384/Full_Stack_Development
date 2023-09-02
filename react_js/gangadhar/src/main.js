@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import './App.css';
+import React,{Component} from "react";
 
-function Main(){
+class Main extends Component{
+    render(){
     return(
         <div style={{marginTop:'30px'}}>
             <Link className="test" to='/'>HOME</Link> 
@@ -12,5 +14,6 @@ function Main(){
             <Link className="test" to='/table'>TABLE</Link>
         </div>
     );
+    }
 }
 export default Main

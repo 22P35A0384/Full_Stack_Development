@@ -60,3 +60,15 @@
   background-color:skyblue;
   color:black;
 }
+
+.table{
+  background-color:green;
+}
+
+.thead{
+  background-color:orange;
+}
+
+.tbody{
+  background-color:#ffff00;
+}
