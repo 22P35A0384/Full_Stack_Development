@@ -12,6 +12,8 @@ class Main extends Component{
             <Link className="test" to='/contact'>CONTACT</Link>
             <Link className="test" to='/trainees'>TRAINEES</Link>
             <Link className="test" to='/table'>TABLE</Link>
+            <Link className="test" to='/navbar'>NAV BAR</Link>
+            <Link className="test" to='/event'>EVENTS</Link>
         </div>
     );
     }

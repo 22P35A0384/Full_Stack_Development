@@ -11,6 +11,8 @@ import { BrowserRouter,Route,Path, Routes } from 'react-router-dom';
 import Student from './student';
 import Trainees from './trainees';
 import Table from './table';
+import Nav from './navbar';
+import Event from './events';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/trainees' element={<Trainees/>}/>
           <Route path='/table' element={<Table/>}/>
+          <Route path='/navbar' element={<Nav/>}/>
+          <Route path='/event' element={<Event/>}/>
         </Routes>
       </BrowserRouter>
     </div>

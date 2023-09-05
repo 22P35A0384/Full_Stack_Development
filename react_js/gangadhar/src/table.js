@@ -31,7 +31,15 @@ class Table extends Component{
         rollno : '22P35A0384',
         branch : 'Mech',
         college : 'ACET'
+    },{
+        name : 'Hari',
+        rollno : '22P35A0394',
+        branch : 'Mech',
+        college : 'ACET'
     }]
+    function show(){
+        let x = document.getElementById('test').innerHTML = '<td><input type="text"/></td><td><input value="ele.name"/></td><td><input/></td><td><input/></td>'
+    }
     return(
         <div style={{marginTop:'50px'}}>
             <center>
@@ -48,7 +56,7 @@ class Table extends Component{
                     {
                         studentdata1.map((ele,i)=>{
                             return(
-                                <tr><td className="td">{ele.name}</td><td className="td">{ele.rollno}</td><td className="td">{ele.branch}</td><td className="td">{ele.college}</td></tr>
+                                <tr id="test" onClick={show}><td>{ele.name}</td><td>{ele.rollno}</td><td>{ele.branch}</td><td>{ele.college}</td></tr>
                             )
                         })
                     }
