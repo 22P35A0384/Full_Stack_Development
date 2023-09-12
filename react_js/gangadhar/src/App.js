@@ -13,6 +13,10 @@ import Trainees from './trainees';
 import Table from './table';
 import Nav from './navbar';
 import Event from './events';
+import Hooks from './hooks';
+import Form from './form';
+import Products from './products';
+import Newproducts from './newproduct';
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
           <Route path='/table' element={<Table/>}/>
           <Route path='/navbar' element={<Nav/>}/>
           <Route path='/event' element={<Event/>}/>
+          <Route path='/hooks' element={<Hooks/>}/>
+          <Route path='/form' element={<Form/>}/>
+          <Route path='/products' element={<Products/>}/>
+          <Route path='/newproducts' element={<Newproducts/>}/>
         </Routes>
       </BrowserRouter>
     </div>

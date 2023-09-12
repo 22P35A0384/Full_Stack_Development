@@ -48,7 +48,7 @@
   border-radius:30px;
   color:black;
   font-weight:Bold;
-  margin-right:5px;
+  margin-right:-10px;
 }
 
 .test:hover{
@@ -61,14 +61,40 @@
   color:black;
 }
 
-.table{
+.table1{
   background-color:green;
 }
 
-.thead{
+.thead1{
   background-color:orange;
 }
 
-.tbody{
+.tbody1{
   background-color:#ffff00;
+}
+
+.col{
+  margin-top:30px;
+}
+
+.products-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px;
+  margin: 20px;
+}
+
+.card{
+  width: 250px;
+  height: 450px;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow:5px 5px 15px rgb(128, 121, 121);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card img{
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
 }
