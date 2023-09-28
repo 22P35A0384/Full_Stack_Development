@@ -17,6 +17,11 @@ import Hooks from './hooks';
 import Form from './form';
 import Products from './products';
 import Newproducts from './newproduct';
+import Electronics from './electronics';
+import Jewelery from './jewelery';
+import Mens from './men\'s_clothing';
+import Womens from './women\'s_clothing';
+import Singleproduct from './single_product';
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
           <Route path='/form' element={<Form/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/newproducts' element={<Newproducts/>}/>
+          <Route path='/electronics' element={<Electronics/>}/>
+          <Route path='/jewelery' element={<Jewelery/>}/>
+          <Route path="/men's_clothing" element={<Mens/>}/>
+          <Route path="/women's_clothing" element={<Womens/>}/>
+          <Route path='/single_product' element={<Singleproduct/>}/>
         </Routes>
       </BrowserRouter>
     </div>

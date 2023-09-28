@@ -31,6 +31,7 @@ function Newproducts(){
                             // </div>
                             // <Productcard res={ele} key={ele.id}/>
                             <Productcard {...ele} key={ele.id}/>
+                            
                         )
                     })
                 }
