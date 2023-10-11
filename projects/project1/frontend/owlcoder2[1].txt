@@ -1,0 +1,1888 @@
+ #20
+n=int(input())
+temp =n 
+rev=0
+while n>0:
+    r=n%10
+    rev=rev*10+r 
+    n=n//10
+if temp==rev:
+    print("YES")
+else:
+    print("NO")
+
+#trinagle
+a,b,c=map(int,input().split())
+if a==b and b==c:
+    print("Equilateral triangle")
+elif a==b or b==c:
+    print("Isosceles triangle")
+else:
+    print("Scalene triangle")
+
+#missing number
+n=int(input())
+l=map(int,input().split())
+k=sorted(l)
+for i in range(1,n+1):
+    if i not in k:
+        print(i)
+
+
+#count vowels constant numbers 
+n=input()
+v=0
+c=0
+d=0
+w=0
+k=set('AEIOUaeiou')
+for i in n:
+    if i.isalpha():
+        if i in k:
+            v+=1
+        else:
+            c+=1
+    elif i.isdigit():
+        d+=1
+    elif i.isspace():
+        w+=1
+print("Vowels:",v)
+print("Consonants:",c)
+print("Digits:",d)
+print("White spaces:",w)
+
+#basic program1
+n=int(input())
+k=n*2.2
+print("%.2f"%k)
+
+#abdtanctnumber(proper factor sum greaterthan the number exculding itself)
+n=int(input())
+temp=n
+sum=0
+for i in range(1,n):
+    if n%i==0:
+        sum=sum+i
+if sum>temp:
+    print("True")
+else:
+    print("False")
+
+#camle count
+n = input()
+c = 1
+for i in range(1,len(n)):
+    if ord(n[i])>=65 and ord(n[i])<=90:
+        c+=1
+print(c)
+
+
+#find maximum
+# input 6
+k=3
+a= 1 2 3 4 3 5 6 3
+output 3 4 4 5 6 6
+n=int(input())
+k=int(input())
+a=list(map(int,input().split()))
+for i in range(n-k+1):
+    print(max(a[i:i+k]),end=" ")
+
+#2 sorted to sum of the middle elements
+def sum(a1,a2):
+    k=sorted(a1+a2)
+    l=k[len(k)//2]+k[len(k)//2-1]
+    return l
+n=int(input())
+a1=list(map(int,input().split()))
+a2=list(map(int,input().split()))
+print(sum(a1,a2))
+
+
+#power of n number
+import math
+a,b,c=map(int,input().split())
+print(int(math.pow(a,b)%c))
+
+#string reverse using recursion 
+n=input()
+l=len(n)
+if l<=1:
+    print(n)
+else:
+    print(n[::-1]) 
+but it is for noraml code
+
+#include<bits/stdc++.h>
+using namespace std;
+string rever(string s,int i){
+    if(s.size()/2 <= i) return s;
+    else{
+        int j = s.size();
+        swap(s[i],s[j-i-1]);
+        return rever(s,i+1);
+    }
+}
+int main(){
+    string s;
+    getline(cin,s);
+    cout<<rever(s,0);
+
+}
+
+#print numbers n to 1
+n=int(input())
+for i in range(n,0,-1):
+    print(i,end=" ")
+
+
+#can be empty
+n=int(input())
+for i in range(n):
+    a=input()
+    k=a.count("B")
+    if  k== len(a)-k:
+        print("YES")
+    else:
+        print("NO")
+
+#expression evaluation
+n=int(input())
+for i in range(n):
+    a,b,c=map(int,input().split())
+    if a+b+c ==0 or a+b-c ==0 or a+c-b ==0 or b+c-a ==0 :
+        print("YES")
+    else:
+        print("NO")
+#reversing equation
+def revequ(s):
+    c = []
+    cn = ""
+    for char in s:
+        if char.isdigit() or char == '.':
+            cn += char
+        else:
+            if cn:
+                c.append(cn)
+                cn = ""
+            c.append(char)
+    
+    if cn:
+        c.append(cn)
+    c.reverse()
+    r = ''.join(c)
+    return r
+s = input()
+k = revequ(s)
+print(k)
+
+#sum divisible by k
+n=int(input())
+l=list(map(int,input().split()))
+k=int(input())
+c=0
+for i in range(n):
+    for j in range(i+1,n+1):
+        z=l[i:j]
+        if(sum(z)%k==0 and c<len(z)):
+            c=len(z)
+print(c) 
+#8
+ans:
+
+a=int(input())
+l1=list(map(int,input().split()))
+l2=list(map(int,input().split()))
+b=int(input())
+c=0
+for i in range(a-1,a-b-1,-1):
+    c+=l1[i]
+for i in range(a-b):
+    if l2[i]==0:
+        c+=l1[i]
+print(c)
+
+
+three idots 
+---------------------
+n=int(input())
+for i in range(n):
+    a,b,c= map(int,input().split())
+    if a+b+c == 0 or a+b-c ==0 or a+c-b ==0 or b+c-a ==0 :
+        print("YES")
+    else:
+        print("NO")
+
+prime factor
+-----------------
+
+def factor(N):
+    i = 2
+    while i * i <= N:
+        if N % i:
+            i += 1
+        else:
+            N //= i
+    if N > 1:
+        return N
+    return i
+n=int(input())
+print(factor(n))
+
+
+count set bits 
+---------------------
+n=int(input())
+for i in range(n):
+    c=0
+    a=int(input())
+    while a:
+        c+=a&1
+        a>>=1
+    print(c)
+
+count wods
+------------------
+n=input().lower().split()
+vowels = ['a', 'e', 'i', 'o', 'u']
+consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+c=0
+for i in n:
+    if i[0] in vowels and i[-1] in consonants:
+        c+=1
+print(c)
+
+
+Reverse Words in a Given String
+-------------------------------------
+n=input()
+n=n.split('.')
+k=n[::-1]
+print('.'.join(k))
+
+Equilibrium Index of an Array
+
+----------------------
+
+def index(a,arr):
+    for i in range(len(arr)):
+        left = sum(arr[:i])
+        right = sum(arr[i+1:])
+        if left == right:
+            return i
+    return -1
+n=int(input())
+for i in range(n):
+    a=int(input())
+    l=list(map(int,input().split()))
+    print(index(a,l))
+
+
+handshake 
+---------------------
+n=int(input())
+for i in range(n):
+    a= int(input())
+    print((a*(a-1))//2)
+
+binary search
+--------------
+def binary(a, t):
+    low = 0
+    high = len(a) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if a[mid] == t:
+            return mid
+        elif a[mid] < t:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+a,b=map(int,input().split())
+l=list(map(int,input().split()))
+print(binary(l,b))
+
+immediate smaller elemnt
+---------------------
+n=int(input())
+l=list(map(int,input().split()))
+m=[]
+s=[]
+l=l[::-1]
+for i in l:
+    if s and s[-1] <i:
+        m.append(s[-1])
+        s.append(i)
+    else:
+        m.append(-1)
+        s.append(i)
+print(*m[::-1])
+
+setKth bit
+
+--------------------
+a,b=map(int,input().split())
+print((1<<b)|a)
+
+power opertaion using recursion
+------------------------------------
+
+def power(a,b):
+    if b==0:
+        return 1
+    else:
+        return a*power(a,b-1)
+a = int(input())
+b=int(input())
+print(power(a,b))
+
+
+pattern 7
+------------------
+n=int(input())
+c=65
+for i in range(n):
+    for j in range(i+1):
+        print(chr(c+i),end ="")
+    print()
+   
+
+next palidrome 
+----------------------
+def pal(N):
+    N += 1
+
+    while True:
+        if str(N) == str(N)[::-1]:
+            return N
+        N += 1
+n=int(input())
+print(pal(n))
+ 
+switches 
+--------------
+import math
+n=int(input())
+print(int(math.sqrt(n)))
+
+online inventiry management
+--------------------------------
+n=int(input())
+b=int(input())
+l=list(map(int,input().split()))
+c=0
+if b in l:
+        print("1")
+else:
+    print("-1")
+
+pattern 6
+----------------
+n=int(input())
+for i in range(1,n+1):
+    c=65
+    for j in range(1,i+1):
+        print(chr(c),end ="")
+        c+=1
+    print()
+
+union of arrays
+----------------------
+a=int(input())
+b=int(input())
+a1=list(map(int,input().split()))
+b1=list(map(int,input().split()))
+k=set(a1).union(set(b1))
+print(*k)
+
+
+bulding prime factors
+-----------------------------
+def prime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n%i == 0:
+            return False
+    return True
+n=int(input())
+k=[]
+for i in range(2,n):
+    if prime(i):
+        k.append(i)
+print(*k)
+
+UNCOMMON WORDS
+--------------------
+n=input().split()
+n1=input().split()
+for i in n:
+    if i not in n1:
+        print(i,end=" ")
+for i in n1:
+    if i not in n:
+        print(i,end="")
+
+
+ALMOST LUCKY
+---------------------
+n=int(input())
+for i in range(n):
+    a=input()
+    k=a.count('4')
+    k2=a.count('7')
+    if k+k2 == 4 or k+k2==7:
+        print("YES")
+    else:
+        print("NO")
+
+Move all Zeroes to End of Array
+----------------------------------
+n = int(input())
+l=list(map(int,input().split()))
+for i in l:
+    if i == 0:
+        l.remove(i)
+        l.append(i)
+print(*l)
+
+
+delete middle elemnt on stack
+----------------------------------
+n=int(input())
+l=list(map(int,input().split()))
+if n%2 != 0 :
+    c=n//2
+    l.pop(c)
+else:
+    c=n//2
+    l.pop(c-1)
+print(*l)
+    
+
+Max subarray With Sum Zero
+------------------------------------
+n=int(input())
+l=list(map(int,input().split()))
+c=0
+for i in range(n):
+    for j in range(i+1,n+1):
+        z=l[i:j]
+        if(sum(z)==0 and c<len(z)):
+            c=len(z)
+print(c)
+
+
+reverse words
+--------------------
+b=input()
+k=b.split()
+p=k[::-1]
+print(*p)
+
+first duplicate
+---------------------
+n=int(input())
+l=list(map(int,input().split()))
+for i in l:
+    if l.count(i)>=2:
+        print(i)
+        break
+else:
+    print(-1)
+
+gcd 
+------------
+import math
+a,b=map(int,input().split())
+print(math.gcd(a,b))
+
+minimum digit elemnts
+---------------------------
+
+a=map(int,input().split())
+l=input().split()
+c=[]
+for i in l:
+    if int(i)<0:
+        i=int(i)*-1
+    c.append(len(i))
+print(c.count(min(c)))
+
+string eqyal 
+---------------------
+n=input()
+m=input()
+if(len(n)!=len(m)):
+    print("0")
+else:
+    for i in n:
+        if i not in m:
+            print("0")
+            break
+    else:
+        print("1")
+
+split array  largest sum
+--------------------------
+a,b=map(int,input().split())
+l=list(map(int,input().split()))
+k=[]
+for i in range(a):
+    s=0
+    for j in range(i,a):
+        s+=l[j]
+    k.append(s)
+print(min(*k))
+
+
+two sorted array of median 
+-----------------------------
+n,m=map(int,input().split())
+l=list(map(int,input().split()))
+l1=list(map(int,input().split()))
+l+=l1
+l.sort()
+if(len(l)%2==0):
+    z=len(l)//2
+    a=l[z]
+    c=l[z-1]
+    b=(a+c)/2
+    if(b==(a+c)//2):
+        print(int(b))
+    else:
+        print(b)
+else:
+    z=len(l)//2
+    c=l[z]
+    print(c)
+
+towers
+-----------
+n = int(input())
+arr = list(map(int,input().split()))
+r = []
+r.append(arr[0])
+for i in range(1,n):
+    c = 0
+    for j in range(len(r)):
+        if r[j]>arr[i]:
+            r[j]=arr[i]
+            c = 1
+            break
+    if c==0:r.append(arr[i])
+print(len(r))
+
+twin primes
+---------------
+def prime(n):
+    if(n==1):
+        return 0
+    for i in range(2,int(n**0.5)+1):
+        if(n%i==0):
+            return 0
+    return 1
+n,m=map(int,input().split())
+for i in range(n,m-2):
+    if(prime(i)==1 and prime(i+2)==1):
+        print(i,i+2)
+
+missing character
+----------------------
+n=input().lower()
+s="abcdefghijklmnopqrstuvwxyz"
+m=""
+for i in s:
+    if i not in n:
+        m+=i
+print(m)
+
+
+
+current bill
+-------------------
+n = int(input())
+if n < 199 : x = 1.20
+elif n >= 200 and n < 400 : x = 1.50
+elif n >= 400 and n < 600 : x = 1.80
+elif n >= 600 : x = 2.00
+b = n*x
+s = 0
+if b >= 400 : 
+    s = (15/100)*b
+    print("{:.2f}".format(b+s))
+else:
+    print("{:.2f}".format(b+100))
+
+Equilibrium point
+-------------------------
+n=int(input())
+l=list(map(int,input().split()))
+for i in range(n):
+    l1=l[:i:]
+    l2=l[i+1::]
+    if(sum(l1)==sum(l2)):
+        print(i+1)
+        break
+
+long pressed keys
+------------------------
+n=input()
+l=input()
+l=set(l)
+if sorted(n)==sorted(l):
+    print("true")
+else:
+    print("false")
+
+
+duplicated characters
+----------------------
+n=input()
+d={}
+for i in n:
+    if i in d.keys():
+        d[i]+=1
+    else:
+        d[i]=1
+for i in d:
+    if d[i]>1:
+        print(i,end='-')
+        print(d[i],end=' ')
+
+solve th equation
+------------------------
+for i in range(int(input())):
+    a=int(input())
+    for k in range(1,a):
+        if (k*(k+1)==(a-1)):
+            print(k)
+            break
+
+
+slide bar
+------------
+n=int(input())
+l=list(map(int,input().split()))
+k=int(input())
+c=0
+for i in range(n):
+    for j in range(i+1,n):
+        if l[i]==l[j] and abs(i-j)<=k:
+            c+=1
+if c>=1:
+    print("true")
+else:
+    print("false")
+
+solve euation
+-----------------
+n=int(input())
+if n==1 or n==3 or n==5:
+    print("NO")
+else:
+    print("YES")
+
+save village
+----------------------
+n=int(input())
+l=list(map(int,input().split()))
+sum=0
+for i in range(n):
+    for j in range(i+1,n):
+        if l[i]<l[j]:
+            sum+=l[j]
+            break
+print(sum)
+
+math teacher
+----------------------
+import math
+a,b=map(int,input().split())
+print(math.lcm(a,b),math.gcd(a,b))
+
+climbing stairs
+----------------------------
+n=int(input())
+l=[]
+t1=0
+t2=1
+while len(l)<n:
+    t3=t1+t2
+    t1=t2
+    t2=t3
+    l.append(t3)
+print(l[n-1])
+
+reverse letter
+------------------------
+
+s = input()
+k = ""
+f = ""
+for i in range(len(s)):
+    if s[i].isalpha():
+        k += s[i]
+k= k[::-1]
+j = 0
+for i in range(len(s)):
+    if s[i].isalpha() == False:
+        f += s[i]
+    else:
+        f += k[j]
+        j += 1
+print(f)
+
+sorting of even and odd array
+--------------------------------
+def sort(arr):
+    n = len(arr)
+    for i in range(0, n):
+        if i % 2 != arr[i] % 2:
+            for j in range(i+1, n):
+                if arr[j] % 2 == i % 2:
+                    arr[i], arr[j] = arr[j], arr[i]
+                    break
+    return arr
+n=int(input())
+l=list(map(int,input().split()))
+print(*sort(l))
+
+
+Number of Pairs Equals to Given Target String
+-------------------------------------------
+n=int(input())
+l=list(map(str,input().split()))
+s=input()
+c=0
+for i in range(n):
+    for j in range(n):
+        if(l[i]+l[j]==s):
+            c+=1
+print(c)
+
+three sum
+--------------------
+n = int(input())
+x = list(map(int,input().split()))
+x.sort()
+i = 0
+c = 0
+d =[]
+while i<=n-2:
+    j = i+1
+    k = n-1
+    while j<k:
+        if x[i]+x[j]+x[k]==0:
+            p = [x[i],x[j],x[k]] 
+            if p not in d:
+                d.append(p)
+                c+=1
+            j+=1
+            k-=1
+        elif x[i]+x[j]+x[k]>0:k-=1
+        else:j+=1
+    i+=1
+print(c)
+
+prefix mathch
+------------------
+n=int(input())
+s=input().split()
+k=int(input())
+m=input()
+a=m[:k:]
+c=0
+for i in s:
+    b=i[:k:]
+    if(a==b):
+        c+=1
+print(c)
+
+
+gross salary
+------------------
+n=int(input())
+if n<=10000:
+    da =n*80/100
+    hr=n*20/100
+elif n<=20000:
+    da =n*90/100
+    hr=n*25/100
+else:
+    da =n*95/100
+    hr=n*30/100
+g=n+da+hr
+print("{:.2f}".format(g))
+
+make array elements unique
+-------------------------------
+def operations(arr):
+    arr.sort()
+    count = 0
+    
+    for i in range(1, len(arr)):
+        if arr[i] <= arr[i-1]:
+            diff = arr[i-1] - arr[i] + 1
+            arr[i] += diff
+            count += diff
+    
+    return count
+n=int(input())
+l=list(map(int,input().split()))
+print(operations(l))
+
+count vowels string
+--------------
+n=int(input())
+print((n+1)*(n+2)*(n+3)*(n+4)//24)
+
+No Repeated Digit Number Count
+-----------------------------------
+a,b=map(int,input().split())
+c =0
+for i in range(a,b+1):
+    if len(set(str(i))) == len(str(i)):
+        c+=1
+print(c)
+
+search in 2d matrix
+-------------------------
+n,m = map(int,input().split())
+mat = []
+for i in range(n):
+    li = list(map(int,input().split()))
+    mat.append(li)
+k = int(input())
+f = 0
+for i in range(n):
+    for j in range(m):
+        if mat[i][j] == k:
+            f = 1
+            break
+if f == 1:
+    print("true")
+else:
+    print("false")
+
+search in a matrix
+-----------------------
+n=int(input())
+m=int(input())
+mat = []
+for i in range(n):
+    li = list(map(int,input().split()))
+    mat.append(li)
+k = int(input())
+f = 0
+for i in range(n):
+    for j in range(m):
+        if mat[i][j] == k:
+            f = 1
+            break
+if f == 1:
+    print(1)
+else:
+    print(0)
+
+search negative in grid
+--------------------------
+n,m=map(int,input().split())
+k=[]
+for i in range(n):
+    l=list(map(int,input().split()))
+    k.append(l)
+c=0
+for i in range(n):
+    for j in range(m):
+        if k[i][j] <0:
+            c+=1
+print(c)
+
+string decode
+-----------------
+s = input()
+s1 = list(set(s))
+res = ""
+for i in s1:
+res += i
+res += str(s.count(i))
+if len(s) >= len(res):
+print("Yes")
+else:
+print("No")
+
+Collatz Sequence 1
+--------------------
+n=int(input())
+print(n,end=" ")
+while n>1:
+    if n%2==0:
+        n=n//2
+    else:
+        n=3*n+1
+    print(n,end=" ")
+
+pattern 8
+----------------
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if(i==1 or i==n or j==1 or j==n):
+            print("*",end="")
+        else:
+            print(" ",end="")
+    print()
+
+row max max 1's
+-----------------------
+n=int(input())
+d=[]
+for i in range(n):
+    a=list(map(int,input().split()))
+    d.append(sum(a))
+m=max(d)
+for i in range(len(d)):
+    if m == d[i]:
+        print(i)
+
+
+substrings of size three
+----------------------------
+n=input()
+s=len(n)
+c=0
+for i in range(0,s-2):
+    n1=n[i:i+3:]
+    l=list(set(n1))
+    if(len(l)==3):
+        c+=1
+print(c)
+
+word game
+---------------
+s = input()
+p = int(input())
+n = len(s)
+if n%p == 0:
+    k = n//p
+    for i in range(0,n,k):
+        print(s[i:i+k],end=" ")
+else:
+    print("Invalid String")
+
+sunaray equal to k sum
+----------------------
+n=int(input())
+l=list(map(int,input().split()))
+k=int(input())
+c=0
+for i in range(n+1):
+   for j in range(i+1,n+1):
+    if sum(l[i:j]) == k:
+        c+=1
+print(c)
+
+sequencies series
+-----------------------
+n=int(input())
+ls=list(map(int,input().split()))
+l=[]
+c=0
+l.append(ls[0])
+l.append(ls[1])
+for i in range(2,n):
+    l.append(l[i-1]+l[i-2])
+    if l[i] !=ls[i]:
+        c+=1
+print(c)
+
+array fitting
+--------------------
+n=int(input())
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+a.sort()
+b.sort()
+for i in range(n):
+    if a[i]>b[i]:
+        print("NO")
+        break
+else:
+    print("YES")
+
+right rotate the array
+---------------------------
+n,k = map(int,input().split())
+arr = list(map(int,input().split()))
+k = k % n
+res = arr[-k:]+arr[:-k]
+print(*res)
+
+distinct elemnts in two arraya
+-----------------------------
+n = int(input())
+arr1 = list(map(int,input().split()))
+arr2 = list(map(int,input().split()))
+res1 = []
+res2 = []
+for i in range(n):
+if arr1[i] not in arr2 and arr1[i] not in res1:
+res1.append(arr1[i])
+if arr2[i] not in arr1 and arr2[i] not in res2:
+res2.append(arr2[i])
+print(*res1)
+print(*res2)
+
+Minimum number:
+--------------------
+n = int(input())
+a = [9,8,7,6,5,4,3,2,1]
+c = 0
+s=''
+for i in a:
+    if c+i <= n:
+        c+=i
+        s+=str(i)
+        
+print(s[::-1])
+
+online shopping carts
+------------------------------------------
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    for i in range(n):
+        l1=l[:i:]
+        l2=l[i+1::]
+        if(sum(l1)==sum(l2)):
+            print(i)
+            break
+    else:
+        print(-1)
+
+strong prime
+-------------------
+def prime(n):
+    if n < 2:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n%i == 0:
+            return False
+    return True
+n = int(input())
+if not prime(n) or n == 2:
+    print("NO")
+else:
+    i = n+1
+    j = n-1
+    while not prime(i):
+        i +=1
+    while not prime(j):
+        j -=1
+    if n > (i+j)/2:
+        print("YES")
+    else:
+        print("NO")
+
+max no of edges
+------------------
+t = int(input())
+for _ in range(t):
+n,k,l = map(int,input().split())
+n = n-(l+k)
+print((k*(n+l))+(n*l)+((n*(n-1))//2))
+
+
+buliding jump
+---------------------
+def jump(arr,n):
+    c = 0
+    m = 0
+    for i in range(1, n):
+        if arr[i] > arr[i - 1]:
+            c += 1
+        else:
+            m = max(m, c)
+            c = 0
+    return max(m, c)
+n = int(input())
+arr = list(map(int,input().split()))
+print(jump(arr,n))
+
+count 2x2 square
+--------------------
+a=int(input())
+a=a-2
+a=a//2
+print(a*(a+1)//2)
+
+minimum size subarray sum 
+-------------------------------
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+l = []
+for i in range(n):
+    s = 0
+    for j in range(i,n):
+        s += arr[j]
+    if s >= k:
+        l.append(len(arr[i:j+1]))
+if len(l):
+    print(min(l))
+else:
+    print(0)
+
+first unique character
+---------------------------
+s = input()
+for i in s:
+    if s.count(i) == 1:
+        print(i)
+        break
+else:
+    print(-1)
+
+check vadility
+----------------------
+t = int(input())
+for _ in range(t):
+    s = input()
+    stack = []
+    f = 1
+    for i in s:
+        if i =='[' or i == '{' or i == '(':
+            stack.append(i)
+        if f == 0:
+            break
+        else:
+            if i == '}':
+                if len(stack)!=0 and stack[-1] == '{':
+                    stack.pop()
+                else:
+                    f = 0
+            elif i == ']':
+                if len(stack)!=0 and stack[-1] == '[':
+                    stack.pop()
+                else:
+                    f = 0
+            elif i == ')':
+                if len(stack)!=0 and stack[-1] == '(':
+                    stack.pop()
+                else:
+                    f = 0
+    if len(stack) == 0 and f ==1:
+        print(True)
+    else:
+        print(False)
+
+reverse order of word
+-----------------------
+n=input().split(" ")
+print(*n[::-1])
+
+kth prime factor
+------------------------
+#kth prime factor
+import math
+def Prime(n,k):
+    while (n%2 == 0):
+        k -= 1
+        n = n//2
+        if (k == 0):
+            return 2
+    i = 3
+    while i <= math.sqrt(n):
+        while (n%i == 0):
+            if (k == 1):
+                return i
+            k -= 1
+            n = n//i
+        i = i+2
+    if n>2 and k == 1:
+        return n
+    return -1
+n = int(input())
+k = int(input())
+print(Prime(n, k))
+
+prime on choice
+------------------
+#primes on choice
+def prime(n):
+    if n < 2:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n%i == 0:
+            return False
+    return True
+n,r,c = map(int,input().split())
+if c == 1:
+    i = n+1
+    while r>0:
+        if prime(i):
+            print(i,end=" ")
+            r -= 1
+        i += 1
+else:
+    j = n-1
+    while r > 0:
+        if prime(j):
+            print(j,end=" ")
+            r -= 1
+        j -= 1
+
+reverse bits
+------------------------------
+n = int(input())
+i, j = 0,31
+while i < j:
+    if(n & (1<<i) > 0 and n&(1 << j) == 0) or (n & (1<<i) == 0 and n&(1 << j) > 0):
+        if(n&(1<<i) == 0):
+            n = n|(1<<i)
+        else:
+            n = n&~(1<<i)
+        if(n&(1<<j) == 0):
+            n = n|(1<<j)
+        else:
+            n = n&~(1<<i)
+    i+= 1
+    j-=1
+print(n)
+
+palin array
+--------------------
+n=int(input())
+l=list(map(str,input().split()))
+for i in l:
+    if(int(i)<10):
+        continue
+    elif i!=i[::-1]:
+        print(0)
+        break
+else:
+    print(1)
+
+sorting the array
+----------------------------------
+n=int(input())
+l=list(map(int,input().split()))
+c=0
+if(l==sorted(l)):
+    print("yes")
+    print(1,1)
+else:
+        
+    for i in range(n):
+        for j in range(i+1,n):
+            a1=l[:i:]
+            a=l[i:j+1]
+            a2=l[j+1:]
+            if(c==0 and a1+a[::-1]+a2==sorted(l)):
+                print("yes")
+                print(i+1,j+1)
+                c=1
+    if(c==0):
+        print("no")
+
+strong elemnet
+-----------------------
+n=int(input())
+l=list(map(int,input().split()))
+if(n==len(list(set(l)))):
+    print("No")
+else:
+    d={}
+    for i in l:
+        if i in d.keys():
+            d[i]+=1
+        else:
+            d[i]=1
+    l1=list(d.values())
+    if(l1.count(max(l1))==1):
+        l2=list(d.keys())
+        print("Yes")
+        print(l2[l1.index(max(l1))])
+    else:
+        print("No")
+
+string game
+-----------------
+n=int(input())
+for i in range(n):
+    a=int(input())
+    s=input()
+    for j in s:
+        if s.count(j)%2!=0:
+            print("NO")
+            break
+    else:
+        print("YES")
+
+string magic 2
+-----------------------
+n=input()
+s=""
+c=0
+for i in range(len(n)):
+    if(n[i].isdigit()):
+        s+=n[i]
+    elif(n[i]=="-" and n[i+1].isdigit() ):
+        if(s!=""):
+            c+=int(s)
+        s+="-"
+    else:
+        if(s!=""):
+            c+=int(s)
+        s=""
+if(s!=""):
+    c+=int(s)
+print(c)
+
+find winneer
+-------------------
+a = int(input())
+k =[]
+f = []
+for i in range(a):
+    b,c = map(int,input().split())
+    k.append(c)
+    f.append(b)
+j = []
+l = []
+for i in f:
+    if i not in k and i not in j:
+        j.append(i)
+d = {}
+for i in k:
+    if i not in d:
+        d[i] = 1
+    else:
+        d[i] += 1
+for i in d:
+    if d[i] == 1:
+        l.append(i)
+j.sort()
+l.sort()
+print(*j)
+print(*l)
+
+find large one
+-------------------
+n=int(input())
+max=0
+while n>0:
+    r=n%10
+    if r>max:
+        max=r
+    n=n//10
+print(max)
+
+three divisors
+-------------------
+def prime(n):
+    if(n==1):
+        return 0
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return 0
+    return 1
+n=int(input())
+s=int(n**0.5)
+c=0
+for i in range(2,s+1):
+    if(prime(i)==1):
+        c+=1
+print(c)
+
+
+abbacus II
+-------------------
+n = int(input())
+k = n
+f =[]
+c = []
+p = str(n)
+for i in p:
+    if int(i) >= 5:
+        c.append(int(i)-5)
+    else:
+        c.append(int(i))
+for j in range(5):
+    l = []
+    if j == 0 :
+        for i in range(len(str(n))):
+            if n % 10 >= 5:l.append(1)
+            else:l.append(0)        
+            n = n//10
+        n = k 
+        l = l[::-1]
+    else:
+        for i in range(len(c)):
+            if c[i] > 0:
+                l.append(1)
+                c[i] -= 1
+            else:
+                l.append(0)
+    print(*l)
+
+abbacus III
+---------------------------
+n,m = map(int,input().split())
+k =[]
+for i in range(n):
+    h = list(map(int,input().split()))
+    if i == 0:
+        for f in range(len(h)):
+            if h[f] == 1:
+                h[f] = 5
+    k.append(h)
+d = k[0]
+for i in range(1,5):
+    for j in range(len(d)):
+        if k[i][j] == 1:
+            d[j] += 1
+for i in d:
+    print(i,end ="")
+
+find transition point
+-------------------------------
+a = int(input())
+arr = list(map(int,input().split()))
+for i in range(len(arr)):
+    if arr[i] == 1:
+        print(i)
+        break
+else:
+    print("-1")
+d ocuurs excatly k times
+----------------------------
+a,b,c,d = map(int,input().split())
+f = 0
+for i in range(a,b+1):
+    i = str(i)
+    if i.count(str(c)) == d:
+        f += 1
+print(f)
+
+greastes among smaller on left
+-----------------------------------
+n=int(input())
+l=list(map(int,input().split()))
+m=[-1,]
+for i in range(1,n):
+    m1=l[:i]
+    m1.sort()
+    for j in range(len(m1)-1,-1,-1):
+        if m1[j]<l[i]:
+            m.append(m1[j])
+            break
+    else:
+        m.append(-1)
+print(*m)
+
+cyclic rotation
+---------------------
+a = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+o = (len(arr)-1)
+print(arr[0],end = " ")
+g = k % o 
+h = a-g
+g = arr[h:]
+y = arr[1:h]
+print(*g,*y)
+
+adjust the data
+--------------------------
+for i in range(int(input())):
+    a,b = map(int,input().split())
+    k = []
+    i = 5
+    while i <= a:
+        k.append(i)
+        i += 5
+    if a % 5 != 0:
+        k.append(a)
+    for i in range(len(k)):
+        if k[i] >= b:
+            print(len(k)-(i+1))
+            break
+
+discount of candies
+-------------------------
+a = int(input())
+arr = list(map(int,input().split()))
+k = max(arr)
+f = [0]*(k+1)
+j = 0
+l  = 0
+for i in range(len(arr)):
+    f[arr[i]] += 1
+g = 0
+for i in range(len(f)-1,0,-1):
+    if g > 0 and f[i] > 0:
+        if g == 2:
+            f[i] -= 1
+            g = 0
+        elif g == 1:
+            if f[i] >= 2:
+                f[i] -= 2
+                g = 0
+            else:
+                f[i] -= 1
+                g = 2
+            l += i
+    if f[i] > 0:
+        h = f[i]//3
+        g = f[i] % 3
+        l += h*i*2
+        if g == 1:
+            l += i
+        elif g == 2:
+            l += (i*2)
+print(l)
+
+steps tomake array non decreasing
+--------------------------------------------------
+n=int(input())
+l=list(map(int,input().split()))
+c=0
+while l!=sorted(l):
+    s=[l[0]]
+    for i in range(1,len(l)):
+        if(l[i-1]<=l[i]):
+            s.append(l[i])
+    l=s
+    c+=1
+print(c)
+Steps to Make Array Non-Decreasing
+------------------------------------
+
+n=int(input())
+l=list(map(int,input().split()))
+c=0
+while l!=sorted(l):
+    s=[l[0]]
+    for i in range(1,len(l)):
+        if(l[i-1]<=l[i]):
+            s.append(l[i])
+    l=s
+    c+=1
+print(c)
+
+distinct prime factors
+------------------------
+for i in range(int(input())):
+    a = int(input())
+    l = [2,3,5,7,11,13,17,19,23,29,31,37]
+    i = 1
+    p =l[0]
+    while p <= a:
+        p = p*l[i]
+        i += 1
+    print(i-1)
+
+sum of divisors
+-----------------------
+def divisorSum( n ):
+    sum = 0
+    for i in range(1, n + 1):
+        sum += int(n / i) * i
+    return int(sum)
+     
+n=int(input())
+print(divisorSum(n))
+
+count divisible digits
+-------------------------------
+def digits(N):
+    count = 0
+    for digit in str(N):
+        if int(digit) != 0 and N % int(digit) == 0:
+            count += 1
+    return count
+n=int(input())
+print(digits(n))
+
+disqualification of memnbers
+----------------------------------
+def mem(n):
+    a1, an = 1, n
+    i, step, cnt = 0, 1, n
+    while cnt > 1:
+        if i % 2:
+            an -= step
+            if cnt % 2:
+                a1 += step
+        else:
+            a1 += step
+            if cnt % 2:
+                an -= step
+        cnt >>= 1
+        step <<= 1
+        i += 1
+    return a1
+n=int(input())
+print(mem(n))
+
+arrange the cows
+--------------------
+def can_place_cows(stalls, k, min_distance):
+    count = 1
+    prev_stall = stalls[0]
+    for i in range(1, len(stalls)):
+        if stalls[i] - prev_stall >= min_distance:
+            count += 1
+            prev_stall = stalls[i]
+    return count >= k
+
+def solve(n, k, stalls):
+    stalls.sort()
+    low = 0
+    high = stalls[n - 1] - stalls[0]
+    result = 0
+    
+    while low <= high:
+        mid = low + (high - low) // 2
+        if can_place_cows(stalls, k, mid):
+            result = mid
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return result
+
+# Input
+n, k = map(int, input().split())
+stalls = list(map(int, input().split()))
+
+# Output
+print(solve(n, k, stalls))
+
+# vowel substring
+---------------------------
+def isVowel(x):
+    if (x == 'a' or x == 'e' or x == 'i' or x == 'o' or x == 'u'):
+        return True
+    return False
+def FindSubstring(str1):
+    n = len(str1)
+    cnt = 0
+    for i in range(n):
+        d= {}
+        for j in range(i, n):
+            if (isVowel(str1[j]) == False):
+                break
+            d[str1[j]] = 1
+            if (len(d) == 5):
+                cnt+=1
+    return cnt
+input_string =input()
+print(FindSubstring(input_string))
+
+# White Knight vs Black Knight
+-----------------------------------------
+def Solve(n, m):
+	X_axis = []
+	X_axis = [-2, -1, 1, 2]
+	Y_axis = []
+	Y_axis = [1, 2, 2, 1]
+	ret = 0
+	for i in range(m):
+		for j in range(n):
+			for k in range(4):
+				x = i + X_axis[k]
+				y = j + Y_axis[k]
+				if (x >= 0 and x < m and
+						y >= 0 and y < n):
+					ret += 1
+	Total = m * n
+	Total = Total * (Total - 1) // 2
+	return 2 * (Total - ret)
+
+n,m = map(int,input().split())
+print(Solve(n,m))
+
+# Bike Booking
+-------------------------
+n = int(input())
+k = int(input())
+bikes = list(map(int,input().split()))
+time = list(map(int,input().split()))
+mintym = []
+if k in bikes:
+    print(0)
+else:
+    for i in range(len(bikes)): 
+        x = abs(k - bikes[i]) * time[i]
+        mintym.append(x)
+    print(min(mintym))
+binary search -I
+------------------
+# Binary Search 1
+a,b = map(int,input().split())
+l = list(map(int,input().split()))
+low = 0
+high = len(l)-1
+mid = (low+high)//2
+k = [l[mid]]
+while low <= high:
+    if l[mid] == b:
+        break
+    if low >= high and l[mid] != b:
+        k.append(-1)
+        break
+    elif l[mid] > b:
+        high = mid-1
+        mid = (low+high)//2
+        k.append(l[mid])
+    else:
+        low = mid+1
+        mid = (low+high)//2
+        k.append(l[mid])
+print(*k)
+
+Small and Large Elements Appearences
+------------------------------
+n=input().split()
+n="".join(n)
+a=min(n)
+b=max(n)
+print(a,n.count(a),b,n.count(b))
+
+travel with minimum cost
+-------------------------------
+n,m,a,b=map(int,input().split())
+if(a<=b/m):
+    print(n*a)
+else:
+    v=(n//m)*b+(n%m)*a
+    d=((n//m)+1)*b
+    print(min(v,d))
+
+Codemind Parentheses
+-------------------------------
+def remove(S):
+    l = r = 0
+    res = cur = ''
+    for s in S:
+        cur += s
+        l += s == '('
+        r += s == ')'
+        if l == r:
+            res += cur[1:-1]
+            cur = ''
+    return res 
+n=input()
+print(remove(n))
+
+Asta and Yuno
+------------------
+def chocolates(A, B, C):
+    total = A * 7 + B * 5
+    max = total // C
+    return max
+a=int(input())
+b=int(input())
+c=int(input())
+print(chocolates(a,b,c))
+
+white boards
+------------------
+n=int(input())
+for i in range(n):
+    a,b=map(int,input().split())
+    l1=list(map(int,input().split()))
+    l2=list(map(int,input().split()))
+    for i in range(0,b):
+        l1.sort()
+        l1[0]=l2[i]
+    print(sum(l1))
+
+Detecting Super Numbers
+-------------------------
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def prime_factors(n):
+    factors = []
+    for i in range(2, n + 1):
+        while n % i == 0 and is_prime(i):
+            factors.append(i)
+            n //= i
+    return factors
+
+def dsum(num):
+    return sum(int(digit) for digit in str(num))
+
+def supernumber(n):
+    if n <= 1:
+        return False
+    factors = prime_factors(n)
+    primesum = sum(dsum(factor) for factor in factors)
+ 
+    nsum = dsum(n)
+
+    return primesum == nsum
+
+n = int(input())
+
+if supernumber(n):
+    print(1)
+else:
+    print(0)
+
+find beauty
+-------------------
+for i in range(int(input())):
+    a = int(input())
+    arr = list(map(int,input().split()))
+    arr.sort()
+    k = []
+    b = 0
+    for i in arr:
+        if i >= sum(k):
+            b += 1
+            k.append(i)
+    print(b)
+
+lost bishop
+-------------------
+n=int(input())
+for s in range(n):
+    m=[]
+    a=input()
+    for i in range(1,9):
+        l=input()
+        m.append(l)
+    for i in range(1,7):
+        for j in range(1,7):
+            if(m[i][j]=='#'):
+                if(m[i-1][j-1]=='#' and m[i+1][j-1]=='#' and m[i-1][j+1]=='#' and m[i+1][j+1]=='#'):
+                    print(i+1,j+1)
+
+series of different sequences
+-------------------------------------
+n = int(input())
+lst = [0]*(n+5)
+lst[0], lst[1], lst[2], lst[3] = 3, -2, 5, 2
+i = 4
+x = 2
+for i in range(4,n+5, 2):
+    lst[i] = lst[i-2]+ 3* (lst[i-2]-lst[i-4])
+for i in range(5,n+5, 2):
+    lst[i] = lst[i-2] + (lst[i-2] - lst[i-4])*5
+print(*lst[:n+1:])
+

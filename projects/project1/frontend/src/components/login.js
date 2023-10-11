@@ -1,28 +1,42 @@
-import { useState } from "react"
-import Home from "./home"
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-function Login(){
-    const user = 'gangadhar'
-    const password = '123'
-    const ProceedLogin=()=>{
-        var inuser = document.getElementById('user').value
-        var inpass = document.getElementById('pass').value
-        if(user===inuser && password===inpass){
-            document.getElementById('main').innerHTML=<Home/>
+const Getourdata = () =>{
+    let [users, getUsers]  = useState([])
+    let api = 'http://localhost:7416/getdata';
+    useEffect(()=>{
+        axios.get(api).then((response)=>{
+            // console.log(response.data.userdata)
+            getUsers(response.data.userdata);
+        })
+    });
+    const [login, getLogin] = useState({
+        'user':'',
+        'pass':''
+    })
+
+    const Getlogin=()=>{
+        var c = 0
+        users && users.map((ele)=>{
+            if (login.user===ele.username && login.pass===ele.password){
+                c+=1
+            }
+        })
+        if(c>0){
+            alert('Success')
+            console.log('User Name Is : '+login.user)
+            console.log('Password Is : '+login.pass)
         }else{
-            alert('Invalid User (Or) Password, Please Check Once')
+            alert('Login Failed')
         }
     }
     return(
-        <>
-            <div id="main">
-                <h1>Login Page</h1>
-                <input id="user" type="text" placeholder="User Name"/><br/>
-                <input id="pass" type="password" placeholder="Password"/><br/>
-                <button onClick={ProceedLogin}>SUBMIT</button>
-            </div>
-        </>
+        <center>
+            <input type="text" placeholder="Enter User Name" onChange={(e)=>getLogin({...login,user:e.target.value})}/><br/><br/>
+            <input type="password" placeholder="Enter Your Password" onChange={(e)=>getLogin({...login,pass:e.target.value})}/><br/><br/>
+            <button onClick={Getlogin}>Submit</button>
+        </center>
     )
 }
 
-export default Login;
+export default Getourdata;

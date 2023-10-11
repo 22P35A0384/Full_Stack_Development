@@ -94,3 +94,39 @@
   margin-top:50px;
   position: fixed;
 }
+
+.trs > td{
+  height: 80px;
+  text-align: right;
+}
+
+td:not(.trs){
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+#td{
+  border-radius: 50%;
+  font-size:28px;
+  color:white;
+}
+
+#td:hover{
+  border-radius: 50%;
+  font-size:28px;
+  color:black;
+  background-color:yellow;
+}
+
+#td:active{
+  border-radius: 50%;
+  font-size:28px;
+  color:black;
+  background-color:green;
+}
+
+#td1{
+  font-size:30px;
+  color:white;
+}

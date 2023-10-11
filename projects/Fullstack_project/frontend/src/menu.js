@@ -4,7 +4,7 @@ function Menu(){
     return(
         <center>
             <div id="navbar">
-                <Link className="navbaricon" to="/Home">HOME</Link>
+                {/* <Link className="navbaricon" to="/Home">HOME</Link> */}
                 <Link className="navbaricon" to='/Class'>CLASS</Link>
                 <Link className="navbaricon" to='/Arrow Function'>ARROWFUNCTION</Link>
                 <Link className="navbaricon" to='/Image'>IMAGE</Link>
@@ -15,6 +15,7 @@ function Menu(){
                 <Link className="navbaricon" to='/Mouse Over'>MOUSEOVER</Link>
                 <Link className="navbaricon" to='/UseState'>USESTATE</Link>
                 <Link className="navbaricon" to='/Bulb'>BULB</Link>
+                <Link className="navbaricon" to='/Calculator'>CALCULATOR</Link>
             </div>
 
         </center>

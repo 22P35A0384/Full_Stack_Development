@@ -14,6 +14,9 @@ import Click from './components/click';
 import Mouseover from './components/mouseover';
 import UseState from './components/usestate';
 import Bulb from './components/bulb';
+import Calculator from './components/calculator';
+import Form from './components/form';
+import Getourdata from './components/getdata';
 function App() {
   return (
     <div className="App">
@@ -31,6 +34,9 @@ function App() {
           <Route path='/Mouse Over' element={<Mouseover/>}/>
           <Route path='/UseState' element={<UseState/>}/>
           <Route path='/Bulb' element={<Bulb/>}/>
+          <Route path='/Calculator' element={<Calculator/>}/>
+          <Route path='/Form' element={<Form/>}/>
+          <Route path='/Getdata' element={<Getourdata/>}/>
         </Routes>
       </BrowserRouter>
     </div>
