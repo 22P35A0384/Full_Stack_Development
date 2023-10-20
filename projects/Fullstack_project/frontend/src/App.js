@@ -17,6 +17,8 @@ import Bulb from './components/bulb';
 import Calculator from './components/calculator';
 import Form from './components/form';
 import Getourdata from './components/getdata';
+import EditForm from './components/editform';
+import NewForm from './components/newform';
 function App() {
   return (
     <div className="App">
@@ -37,6 +39,8 @@ function App() {
           <Route path='/Calculator' element={<Calculator/>}/>
           <Route path='/Form' element={<Form/>}/>
           <Route path='/Getdata' element={<Getourdata/>}/>
+          <Route path='/editform/:id' element={<EditForm/>}/>
+          <Route path='/newform' element={<NewForm/>}/>
         </Routes>
       </BrowserRouter>
     </div>
