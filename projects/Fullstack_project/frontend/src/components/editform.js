@@ -7,14 +7,16 @@ function EditForm(){
         'username':'',
         'password':'',
         'mail':'',
-        'course':''
+        'myfile':''
     })
     const {id} = useParams()
+    const [path,setpath] = useState('')
     // let api = 'http://localhost:7416/getuserdata/'+id;
     useEffect(()=>{
         axios.get('http://localhost:7416/getuserdata/'+id).then((response)=>{
             console.log(response.data.userdata)
             setFormdata(response.data.userdata);
+            setpath(response.data.path)
         })
     },[]);
     const Submitdata=(e)=>{
@@ -24,8 +26,6 @@ function EditForm(){
             alert('Enter Your Password')
         }else if(formdata.mail===''){
             alert('Enter Your Mail ID')
-        }else if(formdata.course===''){
-            alert('Select Your Course')
         }else{
             e.preventDefault();
             // console.log(formdata)
@@ -41,14 +41,16 @@ function EditForm(){
                 <input type="text" name="username" placeholder="User Name" value={formdata.username} onChange={(e)=>setFormdata({...formdata,username:e.target.value})}/><br/><br/>
                 <input type="text" name="password" placeholder="password" value={formdata.password} onChange={(e)=>setFormdata({...formdata,password:e.target.value})}/><br/><br/>
                 <input type="email" name="mail" placeholder="Your Mail Id" value={formdata.mail} onChange={(e)=>setFormdata({...formdata,mail:e.target.value})}/><br/><br/>
-                <select name='course' value={formdata.course} onChange={(e)=>setFormdata({...formdata,course:e.target.value})}>
+                <p style={{background:'white'}}>{path}</p><br/><br/>
+                <img src={path} alt="My Profile Img"/><br/><br/>
+                {/* <select name='course' value={formdata.course} onChange={(e)=>setFormdata({...formdata,course:e.target.value})}>
                     <option>select course</option>
                     <option>FSD</option>
                     <option>AWS</option>
                     <option>Google Devops</option>
                     <option>Asure Devops</option>
                     <option>Google Flutter</option>
-                </select><br/><br/>
+                </select><br/><br/> */}
                 <button type="submit" style={{margin:'10px'}}>Update</button>
                 <input type="reset" value='Reset'/>
             </form>

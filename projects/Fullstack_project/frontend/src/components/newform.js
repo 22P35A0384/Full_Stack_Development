@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function NewForm(){
     const [newdata, setnewdata] = useState({
@@ -20,7 +20,7 @@ function NewForm(){
         }else if(newdata.myfile===''){
             alert('Upload Your IMG')
         }else{
-            // e.preventDefault();
+            e.preventDefault();
             const Inputfileds = new FormData()
             Inputfileds.append('username',newdata.username)
             Inputfileds.append('password',newdata.password)

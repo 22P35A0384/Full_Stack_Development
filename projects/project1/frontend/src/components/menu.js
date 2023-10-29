@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 
-function Menu(){
-    return(
-        <>
-        <Link to='/login'>LOGIN</Link>
-        <Link to='/Home'>Home</Link>
-        </>
-    )
-}
+// function Menu(){
+//     const Nav = useNavigate()
+//     return(
+//         <>
+//         <button onClick={()=>Nav('/login')}>Login</button>
+//         </>
+//     )
+// }
 
-export default Menu;
+// export default Menu;

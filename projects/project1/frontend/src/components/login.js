@@ -1,7 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Home from "./home";
 
 const Getourdata = () =>{
+    document.getElementById('body').style.backgroundImage="url('./main.jpg')"
     let [users, getUsers]  = useState([])
     let api = 'http://localhost:7416/getdata';
     useEffect(()=>{
@@ -9,33 +13,42 @@ const Getourdata = () =>{
             // console.log(response.data.userdata)
             getUsers(response.data.userdata);
         })
-    });
+    },[]);
     const [login, getLogin] = useState({
         'user':'',
         'pass':''
     })
-
+    var id = ''
+    const nav = useNavigate();
     const Getlogin=()=>{
         var c = 0
         users && users.map((ele)=>{
-            if (login.user===ele.username && login.pass===ele.password){
+            if(ele.email===login.user && ele.password===login.pass){
                 c+=1
+                id = ele._id
             }
         })
         if(c>0){
-            alert('Success')
-            console.log('User Name Is : '+login.user)
-            console.log('Password Is : '+login.pass)
+            // alert('Success')
+            // console.log('User Name Is : '+login.user)
+            // console.log('Password Is : '+login.pass)
+            // return <Home data={login.user}/>;
+            nav(`/Home/${id}`)
+            // `/editform/${ele._id}`
         }else{
             alert('Login Failed')
         }
     }
     return(
-        <center>
-            <input type="text" placeholder="Enter User Name" onChange={(e)=>getLogin({...login,user:e.target.value})}/><br/><br/>
-            <input type="password" placeholder="Enter Your Password" onChange={(e)=>getLogin({...login,pass:e.target.value})}/><br/><br/>
-            <button onClick={Getlogin}>Submit</button>
+        <div id="loginblock">
+            <center>
+            <input id="loginblock1" type="text" placeholder="Enter Your Email" onChange={(e)=>getLogin({...login,user:e.target.value})}/><br/><br/>
+            <input id="loginblock1" type="password" placeholder="Enter Your Password" onChange={(e)=>getLogin({...login,pass:e.target.value})}/><br/><br/>
+            <button id="loginbutton" onClick={Getlogin}>Submit</button>
+            <hr id="hr"/>
+            <Link to={'/NewAccount'}><button id="loginbutton">Create New Account</button></Link>
         </center>
+        </div>
     )
 }
 
