@@ -18,7 +18,7 @@ function Newtree(){
         Addtree.append('img',Newtree.img)
         axios.post('http://localhost:7416/addtree',Addtree).then((response)=>{
             // alert(response.data.msg)
-            console.log(Addtree)
+            // console.log(Addtree)
             
         })
         alert('inserted')

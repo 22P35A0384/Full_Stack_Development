@@ -70,6 +70,7 @@
 }
 
 #loginbutton{
+  cursor: pointer;
   background-color:blue;
   color:white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -85,6 +86,7 @@
 }
 
 #loginbutton:hover{
+  cursor: pointer;
   background-color:skyblue;
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -100,6 +102,7 @@
 }
 
 #loginbutton:active{
+  cursor: pointer;
   background-color:greenyellow;
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -188,6 +191,7 @@
 
 #homediv1{
   background:url('/public/plants.jpg');
+  background-size: cover;
   float: left;
   border-radius:50px;
   height:500px;
@@ -358,7 +362,8 @@
 }
 
 .card{
-  width: 250px;
+  cursor: pointer;
+  width: 300px;
   height: 100%;
   padding: 16px;
   border-radius: 5px;
@@ -368,9 +373,10 @@
 }
 
 .card img{
-  width: 100%;
+  width: 250px;
   height: 250px;
-  object-fit: contain;
+  border-radius: 20px;
+  /* object-fit: contain; */
 }
 
 #singledata{
@@ -378,6 +384,7 @@
   backdrop-filter: blur(15px);
   border-radius: 50px;
   width:1000px;
+  height: 500px;
   position: relative;
   left:17%;
   top:100px;
@@ -385,4 +392,19 @@
   padding-top: 30px;
   padding-left:30px;
   padding-right: 30px;
+}
+
+#singledata img{
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  position: relative;
+  top:20px;
+  left:20px;
+}
+
+#textareadiv{
+  position: relative;
+  top:30px;
+  right:45px;
 }

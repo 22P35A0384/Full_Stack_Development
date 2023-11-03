@@ -18,7 +18,7 @@ function Newplants(){
         Addplant.append('img',Newplant.img)
         axios.post('http://localhost:7416/addplant',Addplant).then((response)=>{
             // alert(response.data.msg)
-            console.log(Addplant)
+            // console.log(Addplant)
             
         })
         alert('inserted')

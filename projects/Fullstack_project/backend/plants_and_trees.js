@@ -14,10 +14,9 @@ let plants = new schema({
     email:{
         type:String
     },
-    name:String,
-    img:{
-        data:Buffer,
-        contentType:String
+    profile:{
+        type:String,
+        // type:required
     }
 });
 

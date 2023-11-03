@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Home from "./home";
 
 const Getourdata = () =>{
-    document.getElementById('body').style.backgroundImage="url('./main.jpg')"
+    document.getElementById('body').style.backgroundImage="url('./home.jpg')"
     let [users, getUsers]  = useState([])
     let api = 'http://localhost:7416/getdata';
     useEffect(()=>{
@@ -46,7 +46,8 @@ const Getourdata = () =>{
             <input id="loginblock1" type="password" placeholder="Enter Your Password" onChange={(e)=>getLogin({...login,pass:e.target.value})}/><br/><br/>
             <button id="loginbutton" onClick={Getlogin}>Submit</button>
             <hr id="hr"/>
-            <Link to={'/NewAccount'}><button id="loginbutton">Create New Account</button></Link>
+            <Link to={'/NewAccount'}><button id="loginbutton">Create New Account</button></Link><br/><br/>
+            <a>Forget Password</a>
         </center>
         </div>
     )

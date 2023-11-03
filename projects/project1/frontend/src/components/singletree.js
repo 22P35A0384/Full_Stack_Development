@@ -9,7 +9,7 @@ function Singletree(){
     useEffect(()=>{
         axios.get('http://localhost:7416/singletree/'+id).then((response)=>{
             setsingletree(response.data.single)
-            console.log({singletree})
+            // console.log({singletree})
         })
     },[])
     return(

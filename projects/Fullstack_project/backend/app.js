@@ -11,6 +11,7 @@ import plants from './plants_and_trees';
 import fs from 'fs';
 import newplant from './public/newplant';
 import newtree from './newtree';
+import path from 'path';
 
 const app = express()
 app.use(bodyParser.json())
@@ -77,17 +78,14 @@ app.get('/getdata',async(req,res,next)=>{
 
 app.post('/addnewuser',upload.single('myimg'),async(req,res,next)=>{
     console.log(req.body)
-    // const profile = (req.file) ? req.file.filename : null
+    const profile = (req.file) ? req.file.filename : null
     const {fname,lname, password, email} = req.body;
     const formdata = new plants({
         fname,
         lname,
         password,
         email,
-        img:{
-            data:fs.readFileSync('public/profile/'+req.file.filename),
-            contentType:'image/jpg'
-        }
+        profile 
     })
     try{
         formdata.save()
@@ -96,6 +94,41 @@ app.post('/addnewuser',upload.single('myimg'),async(req,res,next)=>{
         console.log(err)
     }
     return res.status(200).json({form})
+})
+
+app.get('/getotp/:id',async(req,res,next)=>{
+    const email = req.params.id
+    const otp = Math.floor(Math.random() * (999999 - 100000 + 1) ) + 100000;
+    console.log(email)
+    console.log(otp)
+    try{
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'technicalhubdriverready@gmail.com',
+              pass: 'aqlp joww mqgk fmbw'
+            }
+          });
+          
+          var mailOptions = {
+            from: 'technicalhubdriverready@gmail.com',
+            to: email,
+            subject: 'Conformation Mail',
+            text: 'This Is Your One Time Password'+otp,
+          };
+          
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+          return res.send({otp})
+    }catch(err){
+        console.log(err)
+    }
+    return res.status(200).json({otp})
 })
 
 app.get('/getdatabyemail/:id',async(req,res,next)=>{
@@ -145,15 +178,13 @@ app.get('/singletree/:id',async(req,res,next)=>{
 })
 
 app.post('/addplant',upload.single('img'),async(req,res,next)=>{
+    const profile = (req.file) ? req.file.filename : null
     console.log(req.body)
     const {name,details} = req.body;
     const addplant = new newplant({
         name,
         details,
-        img:{
-            data:fs.readFileSync('public/profile/'+req.file.filename),
-            contentType:'image/jpg'
-        }
+        profile
     })
     try{
         addplant.save()
@@ -252,6 +283,16 @@ app.put('/editform/:id',async(req,res,next)=>{
     return res.status(200).json({updatedata})
 })
 
+
+app.get("/img/:id",(req,res)=>{
+    const name=  req.params.id;
+    try{
+    res.sendFile(name,{root:"./public/profile"})
+}
+catch(err){
+    console.log(err)
+}
+})
 
 
 app.post('/newdata',upload.single('myfile'),async(req,res,next)=>{

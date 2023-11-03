@@ -59,7 +59,7 @@ const Getourdata = () =>{
                             <td>{ele.lname}</td>
                             <td>{ele.password}</td>
                             <td>{ele.email}</td>
-                            <td> <img src={`data:image/jpg;base64,${ele.img.data.data.toString('base64')}`} alt="User Image" style={{height:'10px',width:'10px'}} /></td>
+                            <td><img style={{width:'100px',height:'100px'}} src={`http://localhost:7416/img/${ele.profile}`}/></td>
                             <td><Link to={`/editform/${ele._id}`}><button style={{cursor:'pointer'}}>Edit</button></Link></td>
                             <td><button style={{cursor:'pointer'}} onClick={()=>deleteuser(ele._id)}>Delete</button></td>
                         </tr>

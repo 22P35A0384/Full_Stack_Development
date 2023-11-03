@@ -9,7 +9,7 @@ function Trees(){
     useEffect(()=>{
         axios.get('http://localhost:7416/gettree').then((response)=>{
             settreedata(response.data)
-            console.log(treedata)
+            // console.log(treedata)
         })
     },[])
     return(

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewAccount(){
@@ -12,6 +12,14 @@ function NewAccount(){
         'cnfpass':'',
         'myimg':''
     })
+    let [users, getUsers]  = useState([])
+    let api = 'http://localhost:7416/getdata';
+    useEffect(()=>{
+        axios.get(api).then((response)=>{
+            console.log(response.data.userdata)
+            getUsers(response.data.userdata);
+        })
+    },[]);  
     const nav = useNavigate()
     const Createuser=(e)=>{
         if(newuser.fname===''){
@@ -33,18 +41,48 @@ function NewAccount(){
             e.preventDefault()
             alert('Password Mismatch')
         }else{
-            e.preventDefault()
-            console.log(newuser)
-            const Senddata = new FormData()
-            Senddata.append('fname',newuser.fname)
-            Senddata.append('lname',newuser.lname)
-            Senddata.append('password',newuser.password)
-            Senddata.append('email',newuser.email)
-            Senddata.append('myimg',newuser.myimg)
-            axios.post('http://localhost:7416/addnewuser',Senddata).then((result)=>{
-                alert(result.data.msg)
-                nav('/login')
+            let c = 0
+            users.map((ele)=>{
+                if(ele.email===newuser.email){
+                    c+=1
+                }
             })
+            console.log(c)
+            if(c==0){
+                e.preventDefault()
+                const mail = newuser.email
+                console.log(mail)
+                axios.get('http://localhost:7416/getotp/'+mail).then((response)=>{
+                    // console.log(mail)
+                    const newotp = (response.data.otp)
+                    // console.log(response.data)
+                    let otp = prompt('Enter Your OTP sent to the registerd Mail Id')
+                    // console.log(otp)
+                    // console.log(newotp)
+                    if (otp==null){
+                        alert('Invalid OTP')
+                    }else{
+                        if(otp==newotp){
+                            // console.log(newuser)
+                            const Senddata = new FormData()
+                            Senddata.append('fname',newuser.fname)
+                            Senddata.append('lname',newuser.lname)
+                            Senddata.append('password',newuser.password)
+                            Senddata.append('email',newuser.email)
+                            Senddata.append('myimg',newuser.myimg)
+                            axios.post('http://localhost:7416/addnewuser',Senddata).then((result)=>{
+                                alert(result.data.msg)
+                                nav('/login')
+                            })
+                        }
+                        else{
+                            alert('Invalid OTP')
+                        }
+                    }
+                })
+            }else{
+                alert('This Email Was Already Registered..!')
+            }
         }
     }
     return(

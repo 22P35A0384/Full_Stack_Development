@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react"; // Import useRef for the co
 import axios from "axios";
 
 function Home() {
-    document.getElementById('body').style.backgroundImage="url('./home.jpg')"
+    document.getElementById('body').style.backgroundImage="url('./main.jpg')"
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const Nav = useNavigate();
     const contentAreaRef = useRef(null); // Create a ref for the content area
@@ -44,7 +44,7 @@ function Home() {
                 </div>
                 <div class="profile">
                     <div class="profile-details">
-                        <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="profileImg"/>
+                        <img src={`http://localhost:7416/img/${databymail.profile}`} alt="profileImg"/>
                         <div class="name_job">
                         <div class="name">{databymail.fname}  {databymail.lname}</div>
                         <div class="job">{databymail.email}</div>

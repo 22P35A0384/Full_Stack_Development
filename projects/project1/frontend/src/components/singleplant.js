@@ -9,15 +9,21 @@ function Singleplant(){
     useEffect(()=>{
         axios.get('http://localhost:7416/singleplant/'+id).then((response)=>{
             setsingleplant(response.data.single)
-            console.log({singleplant})
+            // console.log({singleplant})
         })
     },[])
     return(
         <div id="singledata">
-            <img src="lhailnva;oncaoergnlsirtngi" alt={singleplant.name}/>
-            <h2>{singleplant.name}</h2>
-            <h4>{singleplant.details}</h4>
-            <button id="loginbutton" onClick={()=>nav('/Plants')}>Return</button>
+            <div style={{float:'left'}}>
+                <img src={`http://localhost:7416/img/${singleplant.profile}`} alt={singleplant.name}/>
+            </div>
+            <div id="textareadiv" style={{float:'right',width:'400px'}}>
+                <div style={{background:'white',padding:'15px',borderRadius:'10px'}}>
+                    <h2 style={{color:'red'}}>{singleplant.name}</h2>
+                    <h4>{singleplant.details}</h4>
+                </div>
+                <button id="loginbutton" onClick={()=>nav('/Plants')}>Return</button>
+            </div>
         </div>
     )
 }
