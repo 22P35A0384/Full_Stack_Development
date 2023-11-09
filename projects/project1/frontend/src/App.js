@@ -12,6 +12,7 @@ import Newplants from './components/newplants';
 import Singleplant from './components/singleplant';
 import Newtree from './components/newtrees';
 import Singletree from './components/singletree';
+import Forgotpassword from './components/forgotpassword';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/Newtree' element={<Newtree/>}/>
           <Route path='/singleplant/:id' element={<Singleplant/>}/>
           <Route path='/singletree/:id' element={<Singletree/>}/>
+          <Route path='/forgotpassword' element={<Forgotpassword/>}/>
         </Routes>
       </BrowserRouter>
     </div>

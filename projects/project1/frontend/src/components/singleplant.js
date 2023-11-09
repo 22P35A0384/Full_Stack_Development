@@ -14,7 +14,7 @@ function Singleplant(){
     },[])
     return(
         <div id="singledata">
-            <div style={{float:'left'}}>
+            <div id="imgdiv">
                 <img src={`http://localhost:7416/img/${singleplant.profile}`} alt={singleplant.name}/>
             </div>
             <div id="textareadiv" style={{float:'right',width:'400px'}}>
@@ -23,6 +23,9 @@ function Singleplant(){
                     <h4>{singleplant.details}</h4>
                 </div>
                 <button id="loginbutton" onClick={()=>nav('/Plants')}>Return</button>
+            </div>
+            <div id="ptag">
+                <p>{singleplant.details}</p>
             </div>
         </div>
     )

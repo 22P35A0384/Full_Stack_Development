@@ -50,7 +50,7 @@
 
 #loginblock{
   width:350px;
-  height:370px;
+  padding-bottom:40px;
   background:white;
   position: relative;
   left:1050px;
@@ -67,6 +67,10 @@
   border-bottom: 1px solid black;
   text-align: center;
   font-size: large;
+}
+
+#loginblock1:active{
+  border: none;
 }
 
 #loginbutton{
@@ -131,10 +135,18 @@
   background:transparent;
   backdrop-filter: blur(10px);
   position: relative;
-  top:120px;
+  top:100px;
   left:150px;
   padding-bottom:40px;
   border-radius:40px;
+}
+
+#passnote{
+  color: red;
+  width: 255px;
+  position: relative;
+  top: 50px;
+  left:70px;
 }
 
 .fileinput{
@@ -379,12 +391,20 @@
   /* object-fit: contain; */
 }
 
+#ptag{
+  color: transparent;
+}
+
+#imgdiv{
+  margin-top: 30px;
+  float: left;
+}
+
 #singledata{
+  width: 1000px;
   background:transparent;
   backdrop-filter: blur(15px);
   border-radius: 50px;
-  width:1000px;
-  height: 500px;
   position: relative;
   left:17%;
   top:100px;

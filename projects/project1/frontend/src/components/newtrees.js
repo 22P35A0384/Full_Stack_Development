@@ -22,7 +22,7 @@ function Newtree(){
             
         })
         alert('inserted')
-        nav('/Trees')
+        // nav('/Trees')
         
     }
     return(

@@ -16,7 +16,7 @@ function EditForm(){
         axios.get('http://localhost:7416/getuserdata/'+id).then((response)=>{
             console.log(response.data.userdata)
             setFormdata(response.data.userdata);
-            setpath(response.data.path)
+            setpath(response.data.path);
         })
     },[]);
     const Submitdata=(e)=>{

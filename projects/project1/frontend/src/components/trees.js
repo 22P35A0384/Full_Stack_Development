@@ -24,7 +24,7 @@ function Trees(){
                         }
                         return(
                             <div className="card" onClick={()=>Expand()}>
-                                <img src={`data:image/jpg;base64,${ele.img.data.data.toString('base64')}`} alt="User Image" style={{height:'10px',width:'10px'}} />
+                                <img src={`http://localhost:7416/img/${ele.profile}`} alt="User Image" />
                                 <h3>{ele.name}</h3>
                             </div>
                         )

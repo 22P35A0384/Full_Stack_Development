@@ -12,7 +12,7 @@ import fs from 'fs';
 import newplant from './public/newplant';
 import newtree from './newtree';
 import path from 'path';
-
+import bus_data from './busdata';
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -22,6 +22,23 @@ mongoose.connect('mongodb+srv://venkatasaigangadharsgk:n4VQAS94wkyL4Nls@cluster0
         console.log('success')
     )
     .catch((err)=>console.log(err));
+
+
+app.get('/busdata',async(req,res,next)=>{
+    let dataofbus;
+    try{
+        dataofbus = await bus_data.find();
+    }catch(err){
+        console.log(err)
+    }
+    if(!dataofbus){
+        return res.status(404).json({msg:'No Data Found'})
+    }
+    return res.status(200).json({dataofbus})
+})
+
+
+
 app.post('/adddata',(req,res,next)=>{
     console.log(req.body)
 })
@@ -89,7 +106,34 @@ app.post('/addnewuser',upload.single('myimg'),async(req,res,next)=>{
     })
     try{
         formdata.save()
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'technicalhubdriverready@gmail.com',
+              pass: 'aqlp joww mqgk fmbw'
+            }
+        });
+          
+        var mailOptions = {
+            from: 'technicalhubdriverready@gmail.com',
+            to: email,
+            subject: 'Welcome To Plants & Trees',
+            text: 'Hello '+fname+' '+lname+' Thanks For Registering, Please Conform Your Registration',
+            attachments:[{
+                filename:profile,
+                path:'public/profile/'+profile
+            }]
+        };
+          
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
         return res.send({msg:'Your Account Was Created, You Will Be Redirected To Login Page'})
+        
     }catch(err){
         console.log(err)
     }
@@ -114,7 +158,8 @@ app.get('/getotp/:id',async(req,res,next)=>{
             from: 'technicalhubdriverready@gmail.com',
             to: email,
             subject: 'Conformation Mail',
-            text: 'This Is Your One Time Password'+otp,
+            text: 'This Is Your One Time Password  '+otp+
+            ' Never Share Your OTP to Any One..!',
           };
           
           transporter.sendMail(mailOptions, function(error, info){
@@ -145,6 +190,39 @@ app.get('/getdatabyemail/:id',async(req,res,next)=>{
         return res.status(404).json({msg:'No User Found.'})
     }
     return res.status(200).json({logindata})
+})
+
+app.get('/mail/:id',async(req,res,next)=>{
+    const mail = req.params.id
+    const data = {email:mail}
+    let maildata;
+    try{
+        maildata = await plants.findOne(data)
+        console.log(maildata)
+    }catch(err){
+        console.log(err)
+    }
+    if(!maildata){
+        return res.status(404).json({msg:'Email Id Not Found'})
+    }
+    return res.status(200).json({maildata})
+})
+
+app.put('/updatepass/:id',async(req,res,next)=>{
+    const _id = req.params.id
+    const {password} = req.body.update;
+    console.log(password)
+    let updatepass;
+    try{
+        updatepass = await plants.findByIdAndUpdate(_id,{password})
+        return res.send({msg:'Your Password Was Updated Successfully, You Will Be Redirected To Login Page'})
+    }catch(err){
+        console.log(err)
+    }
+    if(!updatepass){
+        return res.status(404).json({msg:'Users Not Found'})
+    }
+    return res.status(200).json({updatepass})
 })
 
 app.get('/singleplant/:id',async(req,res,next)=>{
@@ -196,15 +274,13 @@ app.post('/addplant',upload.single('img'),async(req,res,next)=>{
 })
 
 app.post('/addtree',upload.single('img'),async(req,res,next)=>{
+    const profile = (req.file) ? req.file.filename : null
     console.log(req.body)
     const {name,details} = req.body;
     const addtree = new newtree({
         name,
         details,
-        img:{
-            data:fs.readFileSync('public/profile/'+req.file.filename),
-            contentType:'image/jpg'
-        }
+        profile
     })
     try{
         addtree.save()

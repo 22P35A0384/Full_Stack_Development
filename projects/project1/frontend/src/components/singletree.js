@@ -14,10 +14,19 @@ function Singletree(){
     },[])
     return(
         <div id="singledata">
-            <img src="lhailnva;oncaoergnlsirtngi" alt={singletree.name}/>
-            <h2>{singletree.name}</h2>
-            <h4>{singletree.details}</h4>
-            <button id="loginbutton" onClick={()=>nav('/Trees')}>Return</button>
+            <div id="imgdiv">
+                <img src={`http://localhost:7416/img/${singletree.profile}`} alt={singletree.name}/>
+            </div>
+            <div id="textareadiv" style={{float:'right',width:'400px'}}>
+                <div style={{background:'white',padding:'15px',borderRadius:'10px'}}>
+                    <h2 style={{color:'red'}}>{singletree.name}</h2>
+                    <h4>{singletree.details}</h4>
+                </div>
+                <button id="loginbutton" onClick={()=>nav('/Trees')}>Return</button>
+            </div>
+            <div id="ptag">
+                <p>{singletree.details}</p>
+            </div>
         </div>
     )
 }

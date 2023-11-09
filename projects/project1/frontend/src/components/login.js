@@ -36,7 +36,7 @@ const Getourdata = () =>{
             nav(`/Home/${id}`)
             // `/editform/${ele._id}`
         }else{
-            alert('Login Failed')
+            alert('This Account Was Not Found Please Create A New Account')
         }
     }
     return(
@@ -44,10 +44,10 @@ const Getourdata = () =>{
             <center>
             <input id="loginblock1" type="text" placeholder="Enter Your Email" onChange={(e)=>getLogin({...login,user:e.target.value})}/><br/><br/>
             <input id="loginblock1" type="password" placeholder="Enter Your Password" onChange={(e)=>getLogin({...login,pass:e.target.value})}/><br/><br/>
-            <button id="loginbutton" onClick={Getlogin}>Submit</button>
+            <button id="loginbutton" onClick={Getlogin}>Login</button>
             <hr id="hr"/>
-            <Link to={'/NewAccount'}><button id="loginbutton">Create New Account</button></Link><br/><br/>
-            <a>Forget Password</a>
+            <Link to={'/NewAccount'}><button id="loginbutton">Create New Account</button></Link>
+            <Link to={'/forgotpassword'}><button id="loginbutton">Forgot Password</button></Link>
         </center>
         </div>
     )

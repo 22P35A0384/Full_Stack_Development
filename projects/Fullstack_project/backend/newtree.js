@@ -8,9 +8,9 @@ let newtree = new schema({
     details:{
         type:String
     },
-    img:{
-        data:Buffer,
-        contentType:String
+    profile:{
+        type:String,
+        // type:required
     }
 })
 

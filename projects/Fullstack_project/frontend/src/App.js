@@ -19,6 +19,7 @@ import Form from './components/form';
 import Getourdata from './components/getdata';
 import EditForm from './components/editform';
 import NewForm from './components/newform';
+import Getbusdata from './components/busdata';
 function App() {
   return (
     <div className="App">
@@ -41,6 +42,7 @@ function App() {
           <Route path='/Getdata' element={<Getourdata/>}/>
           <Route path='/editform/:id' element={<EditForm/>}/>
           <Route path='/newform' element={<NewForm/>}/>
+          <Route path='/busdata' element={<Getbusdata/>}/>
         </Routes>
       </BrowserRouter>
     </div>
