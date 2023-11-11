@@ -1,24 +1,37 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Plants(){
+function Changepass(){
     useEffect(()=>{
         if(!localStorage.getItem('user')){
             alert('Please Login Your Account')
             window.location.href='/login'
         }
     },[])
-    document.getElementById('body').style.backgroundImage="url('./plants.jpg')"
-    const nav = useNavigate()
-    const [plantdata,setplantdata] = useState([])
-    useEffect(()=>{
-        axios.get('http://localhost:7416/getplant').then((response)=>{
-            setplantdata(response.data)
-            // console.log(plantdata)
-        })
-    },[])
     const Nav = useNavigate()
+    document.getElementById('body').style.backgroundImage="url('./main.jpg')"
+    const [changepass, setchangepass] = useState({
+        'oldpass':'',
+        'newpass':'',
+        'cnfpass':''
+    });
+    const Submit=(e)=>{
+        if(!changepass.oldpass){
+            alert('Enter Your Old Password')
+        }else if(!changepass.newpass){
+            alert('Enter Your New Password')
+        }else if(!changepass.cnfpass){
+            alert('Re-Enter Your New Password')
+        }else if(changepass.newpass!=changepass.cnfpass){
+            alert('Password Mismatch')
+        }else{
+            axios.put('http://localhost:7416/changepass/'+localStorage.getItem('user')+'/'+changepass.oldpass+'/'+changepass.newpass).then((response)=>{
+                alert(response.data.msg)
+                window.location.href=`/home/${localStorage.getItem('user')}`
+            })
+        }
+    }
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [databymail, setdatabymail] = useState([])
     const id = localStorage.getItem('user')
@@ -36,7 +49,6 @@ function Plants(){
     }
     return(
         <div>
-            <div>
             <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div class="logo-details">
                     <div class="logo_name">Plants And Trees</div>
@@ -77,7 +89,7 @@ function Plants(){
                         </a>
                     </li>
                     <li>
-                        <a href="/editprofile" className="navtext">
+                        <a href="/changepassword" className="navtext">
                             <i class='bx bxs-cog'></i>
                             <span className="navspan">SETTINGS</span>
                         </a>
@@ -87,27 +99,21 @@ function Plants(){
                     </li>
                 </ul>
             </div>
-            </div>
             <div>
-                <Link to={'/Newplants'}><button id="loginbutton">Add New Plants</button></Link><br/><br/>
-                <div className="products-list">
-                    {
-                        plantdata && plantdata.map((ele)=>{
-                            const Expand=()=>{
-                                nav(`/singleplant/${ele._id}`)
-                            }
-                            return(
-                                <div className="card" onClick={()=>Expand()}>
-                                    <img src={`http://localhost:7416/img/${ele.profile}`} alt="User Image" />
-                                    <h3>{ele.name}</h3>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+                <Link to={'/editprofile'}><button id="navbtn">EDIT PROFILE</button></Link>
+                <Link to={'/changepassword'}><button style={{backgroundColor:'red'}} id="navbtn">CHANGE PASSWORD</button></Link>
+                <Link to={'/deleteaccount'}><button id="navbtn">DELETE ACCOUNT</button></Link>
             </div>
+            <div id="loginblock" style={{position:'relative',top:'150px',left:'900px'}}>
+                <h4 style={{position:'relative',top:'25px'}}>CHANGE PASSWORD</h4>
+                <hr style={{position:'relative',left:'18px',top:'20px'}} id="hr"/>
+                <input id="loginblock1" type="password" placeholder="Enter Your Old Password" onChange={(e)=>setchangepass({...changepass,oldpass:e.target.value})}/><br/><br/>
+                <input id="loginblock1" type="password" placeholder="Enter Your New Password" onChange={(e)=>setchangepass({...changepass,newpass:e.target.value})}/><br/><br/>
+                <input id="loginblock1" type="password" placeholder="Re-Enter New Password" onChange={(e)=>setchangepass({...changepass,cnfpass:e.target.value})}/><br/><br/>
+                <button id="loginbutton" onClick={()=>Submit()}>SUBMIT</button><br/>
+            </div> 
         </div>
     )
 }
 
-export default Plants;
+export default Changepass;

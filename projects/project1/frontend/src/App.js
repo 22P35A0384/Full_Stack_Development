@@ -13,6 +13,11 @@ import Singleplant from './components/singleplant';
 import Newtree from './components/newtrees';
 import Singletree from './components/singletree';
 import Forgotpassword from './components/forgotpassword';
+import Logout from './components/logout';
+import Changepass from './components/changepass';
+import ContactPage from './components/contact';
+import DeleteAcc from './components/deleteacc';
+import Editprofile from './editprofile';
 
 function App() {
   return (
@@ -21,7 +26,7 @@ function App() {
       {/* <Menu/> */}
         <Routes>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/Home/:id' element={<Home/>}/>
+          <Route path='/Home' element={<Home/>}/>
           <Route path='/NewAccount' element={<NewAccount/>}/>
           <Route path='/Plants' element={<Plants/>}/>
           <Route path='/Trees' element={<Trees/>}/>
@@ -30,6 +35,11 @@ function App() {
           <Route path='/singleplant/:id' element={<Singleplant/>}/>
           <Route path='/singletree/:id' element={<Singletree/>}/>
           <Route path='/forgotpassword' element={<Forgotpassword/>}/>
+          <Route path='/logout' element={<Logout/>}/>
+          <Route path='/changepassword' element={<Changepass/>}/>
+          <Route path='/contact' element={<ContactPage/>}/>
+          <Route path='/deleteaccount' element={<DeleteAcc/>}/>
+          <Route path='/editprofile' element={<Editprofile/>}/>
         </Routes>
       </BrowserRouter>
     </div>

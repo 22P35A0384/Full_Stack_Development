@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Singletree(){
+    useEffect(()=>{
+        if(!localStorage.getItem('user')){
+            alert('Please Login Your Account')
+            window.location.href='/login'
+        }
+    },[])
     const [singletree, setsingletree] = useState([])
     const {id} = useParams()
     const nav = useNavigate()
@@ -20,7 +26,7 @@ function Singletree(){
             <div id="textareadiv" style={{float:'right',width:'400px'}}>
                 <div style={{background:'white',padding:'15px',borderRadius:'10px'}}>
                     <h2 style={{color:'red'}}>{singletree.name}</h2>
-                    <h4>{singletree.details}</h4>
+                    <h6>{singletree.details}</h6>
                 </div>
                 <button id="loginbutton" onClick={()=>nav('/Trees')}>Return</button>
             </div>

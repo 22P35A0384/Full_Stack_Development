@@ -1,8 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Newtree(){
+    useEffect(()=>{
+        if(!localStorage.getItem('user')){
+            alert('Please Login Your Account')
+            window.location.href='/login'
+        }
+    },[])
     document.getElementById('body').style.backgroundImage="url('./hmoe.jpg')"
     const [Newtree,Setnewtree] = useState({
         'name':'',

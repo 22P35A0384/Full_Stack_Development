@@ -13,6 +13,7 @@ import newplant from './public/newplant';
 import newtree from './newtree';
 import path from 'path';
 import bus_data from './busdata';
+import feedback from './feedback';
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -22,6 +23,124 @@ mongoose.connect('mongodb+srv://venkatasaigangadharsgk:n4VQAS94wkyL4Nls@cluster0
         console.log('success')
     )
     .catch((err)=>console.log(err));
+
+const storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, 'public/profile')
+    },
+    filename: function (req, file, callback) {
+        // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        callback(null, Date.now()+"_"+file.originalname)
+    }
+    })
+    
+    const upload = multer({ storage: storage })
+
+app.post('/sendfeedback',(req,res,next)=>{
+    const {name,email,subject,message} = req.body
+    const Feedback = new feedback({
+        name,
+        email,
+        subject,
+        message
+    })
+    try{
+        Feedback.save()
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'technicalhubdriverready@gmail.com',
+              pass: 'aqlp joww mqgk fmbw'
+            }
+        });
+          
+        var mailOptions = {
+            from: 'technicalhubdriverready@gmail.com',
+            to: 'sai8341j11@gmail.com',
+            subject: 'New Feedback Data',
+            text: 'New Feedback Data From'+name+' With Email Id'+email+' The Subject Is '+subject+'And The Messaage Was '+message,
+        };
+          
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        return res.send({msg:'Thank You For Your Valuable Feedback'})
+    }catch(err){
+        console.log(err)
+    }
+})
+
+app.put('/changepass/:id/:old/:new',async(req,res,next)=>{
+    const _id = req.params.id
+    const oldpass = req.params.old
+    const password = req.params.new
+    let checkpass;
+    let updatepass;
+    try{
+        checkpass = await plants.findOne({_id:_id,password:oldpass})
+    }catch(err){
+        console.log(err)
+    }
+    if(!checkpass){
+        return res.status(200).json({msg:'Invalid Old Password!'})
+    }else{
+        try{
+            updatepass = await plants.findByIdAndUpdate(_id,{password})
+            return res.status(200).json({msg:'Password Changed Successfully'})
+        }catch(err){
+            console.log(err)
+        }
+    }
+})
+
+app.put('/editdata/:id',async(req,res,next)=>{
+    const {fname,lname,email} = req.body
+    const _id = req.params.id
+    let editdata;
+    try{
+        editdata = await plants.findByIdAndUpdate(_id,{fname,lname,email})
+        return res.status(200).json({msg:'Updated Successfully!'})
+    }catch(err){
+        console.log(err)
+    }
+})
+
+app.put('/editdataimg/:id',upload.single('myimg'),async(req,res,next)=>{
+    const {fname,lname,email} = req.body
+    const profile = (req.file) ? req.file.filename : null
+    const _id = req.params.id
+    let editdata;
+    try{
+        editdata = await plants.findByIdAndUpdate(_id,{fname,lname,email,profile})
+        return res.status(200).json({msg:'Updated Successfully!'})
+    }catch(err){
+        console.log(err)
+    }
+})
+
+app.get('/checkmail/:user/:pass',async(req,res,next)=>{
+    const mail = req.params.user;
+    const pass = req.params.pass;
+    let checkmail;
+    let checkpass;
+    try{
+        checkmail = await plants.findOne({email:mail})
+        checkpass = await plants.findOne({email:mail,password:pass})
+    }catch(err){
+        console.log(err)
+    }
+    if(!checkmail){
+        return res.status(200).json({msg:'Invalid User!'})
+    }else if(!checkpass){
+        return res.status(200).json({msg:'Invalid Password!'})
+    }
+    return res.status(200).json(checkpass._id)
+})
+
 
 
 app.get('/busdata',async(req,res,next)=>{
@@ -67,17 +186,6 @@ app.post('/adduser',(req,res,next)=>{
     return res.status(200).json({formdata})
 })
 
-const storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-      callback(null, 'public/profile')
-    },
-    filename: function (req, file, callback) {
-      // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      callback(null, Date.now()+"_"+file.originalname)
-    }
-  })
-  
-  const upload = multer({ storage: storage })
 
 app.get('/getdata',async(req,res,next)=>{
     let userdata;
@@ -324,6 +432,17 @@ app.delete('/deleteuser/:id',async(req,res,next)=>{
         studentdata = await newdata.findByIdAndDelete(_id)
     }
     catch(err){
+        console.log(err)
+    }
+})
+
+app.delete('/deleteacc/:id',async(req,res,next)=>{
+    const _id = req.params.id
+    let deleteacc;
+    try{
+        deleteacc = await plants.findByIdAndDelete(_id)
+        return res.status(200).json({msg:'Account Deleted Successfully'})
+    }catch(err){
         console.log(err)
     }
 })

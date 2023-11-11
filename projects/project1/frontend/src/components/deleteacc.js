@@ -1,24 +1,19 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom"
+import { useEffect,useState } from "react"
+import axios from "axios"
 
-function Plants(){
+function DeleteAcc(){
+    const Nav = useNavigate()
     useEffect(()=>{
         if(!localStorage.getItem('user')){
             alert('Please Login Your Account')
             window.location.href='/login'
         }
     },[])
-    document.getElementById('body').style.backgroundImage="url('./plants.jpg')"
-    const nav = useNavigate()
-    const [plantdata,setplantdata] = useState([])
-    useEffect(()=>{
-        axios.get('http://localhost:7416/getplant').then((response)=>{
-            setplantdata(response.data)
-            // console.log(plantdata)
-        })
-    },[])
-    const Nav = useNavigate()
+    const [conform,setconform] = useState({
+        'mail':'',
+        'pass':''
+    })
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [databymail, setdatabymail] = useState([])
     const id = localStorage.getItem('user')
@@ -34,9 +29,24 @@ function Plants(){
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     }
+    const Delete=()=>{
+        if(!conform.mail){
+            alert('Enter Your Email')
+        }else if(!conform.pass){
+            alert('Enter Your Password')
+        }else if(conform.mail!==databymail.email){
+            alert('Invalid Mail!')
+        }else if(conform.pass!==databymail.password){
+            alert('Invalid Password!')
+        }else{
+            axios.delete('http://localhost:7416/deleteacc/'+id).then((response)=>{
+                alert(response.data.msg)
+                Nav('/logout')
+            })
+        }
+    }
     return(
         <div>
-            <div>
             <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div class="logo-details">
                     <div class="logo_name">Plants And Trees</div>
@@ -77,7 +87,7 @@ function Plants(){
                         </a>
                     </li>
                     <li>
-                        <a href="/editprofile" className="navtext">
+                        <a href="/changepassword" className="navtext">
                             <i class='bx bxs-cog'></i>
                             <span className="navspan">SETTINGS</span>
                         </a>
@@ -87,27 +97,20 @@ function Plants(){
                     </li>
                 </ul>
             </div>
-            </div>
             <div>
-                <Link to={'/Newplants'}><button id="loginbutton">Add New Plants</button></Link><br/><br/>
-                <div className="products-list">
-                    {
-                        plantdata && plantdata.map((ele)=>{
-                            const Expand=()=>{
-                                nav(`/singleplant/${ele._id}`)
-                            }
-                            return(
-                                <div className="card" onClick={()=>Expand()}>
-                                    <img src={`http://localhost:7416/img/${ele.profile}`} alt="User Image" />
-                                    <h3>{ele.name}</h3>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+                <Link to={'/editprofile'}><button id="navbtn">EDIT PROFILE</button></Link>
+                <Link to={'/changepassword'}><button id="navbtn">CHANGE PASSWORD</button></Link>
+                <Link to={'/deleteaccount'}><button style={{backgroundColor:'red'}} id="navbtn">DELETE ACCOUNT</button></Link>
+            </div>
+            <div id="loginblock" style={{position:'relative',top:'150px',left:'900px'}}>
+                <h4 style={{position:'relative',top:'25px'}}>DELETE ACCOUNT</h4>
+                <hr style={{position:'relative',left:'18px',top:'20px'}} id="hr"/>
+                <input id="loginblock1" type="email" placeholder="Enter Your Mail Id" onChange={(e)=>setconform({...conform,mail:e.target.value})}/><br/><br/>
+                <input id="loginblock1" type="password" placeholder="Enter Your Password" onChange={(e)=>setconform({...conform,pass:e.target.value})}/><br/><br/>
+                <button id="loginbutton" onClick={()=>Delete()} >SUBMIT</button><br/>
             </div>
         </div>
     )
 }
 
-export default Plants;
+export default DeleteAcc;
